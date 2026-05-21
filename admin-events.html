@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Events — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points & Rewards</div>
+    <a href="admin-points.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+
+  <div class="main-area">
+
+    <div class="main-head">
+      <div class="main-title">
+        <em>Events / Actions</em>
+        Configure point-earning activities
+      </div>
+      <div class="main-actions">
+        <button class="btn-sm"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Export</button>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-input" placeholder="Search event, code..." />
+      <select class="filter-select">
+        <option>All Status</option><option>Active</option><option>Scheduled</option><option>Ended</option>
+      </select>
+      <select class="filter-select">
+        <option>All Types</option><option>Daily action</option><option>Live music</option><option>Game</option><option>Workshop</option>
+      </select>
+      <button class="btn-sm primary" style="margin-left:auto;">+ Add Event</button>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr>
+          <th>Event / Action</th><th>Points Awarded</th><th>Participants</th>
+          <th>Check-in Code</th><th>Status</th><th>Actions</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td><div class="cell-name">Festival Daily Check-in</div><div class="cell-meta">Daily action</div></td>
+          <td class="cell-num">5 pts</td>
+          <td>8,412 participants</td>
+          <td class="cell-mono">EVT-DAILY</td>
+          <td><span class="badge success">active</span></td>
+          <td><button class="btn-sm" style="padding:6px 12px;">QR / Edit</button></td>
+        </tr>
+        <tr>
+          <td><div class="cell-name">Sunset Music Session</div><div class="cell-meta">Live music</div></td>
+          <td class="cell-num">50 pts</td>
+          <td>1,247 participants</td>
+          <td class="cell-mono">EVT-SUNSET</td>
+          <td><span class="badge success">active</span></td>
+          <td><button class="btn-sm" style="padding:6px 12px;">QR / Edit</button></td>
+        </tr>
+        <tr>
+          <td><div class="cell-name">Game Booth Challenge</div><div class="cell-meta">Game</div></td>
+          <td class="cell-num">10 pts</td>
+          <td>628 participants</td>
+          <td class="cell-mono">EVT-GAME</td>
+          <td><span class="badge success">active</span></td>
+          <td><button class="btn-sm" style="padding:6px 12px;">QR / Edit</button></td>
+        </tr>
+        <tr>
+          <td><div class="cell-name">Photo Hunt Friday</div><div class="cell-meta">Activity</div></td>
+          <td class="cell-num">25 pts</td>
+          <td>412 participants</td>
+          <td class="cell-mono">EVT-PHOTO</td>
+          <td><span class="badge success">active</span></td>
+          <td><button class="btn-sm" style="padding:6px 12px;">QR / Edit</button></td>
+        </tr>
+        <tr>
+          <td><div class="cell-name">Cooking Workshop</div><div class="cell-meta">Workshop</div></td>
+          <td class="cell-num">75 pts</td>
+          <td>142 participants</td>
+          <td class="cell-mono">EVT-COOK</td>
+          <td><span class="badge gold">scheduled</span></td>
+          <td><button class="btn-sm" style="padding:6px 12px;">QR / Edit</button></td>
+        </tr>
+        <tr>
+          <td><div class="cell-name">Welcome Registration</div><div class="cell-meta">Sign-up bonus</div></td>
+          <td class="cell-num">10 pts</td>
+          <td>8,412 participants</td>
+          <td class="cell-mono">EVT-REG</td>
+          <td><span class="badge success">active</span></td>
+          <td><button class="btn-sm" style="padding:6px 12px;">QR / Edit</button></td>
+        </tr>
+        <tr>
+          <td><div class="cell-name">Cultural Performance</div><div class="cell-meta">Performance</div></td>
+          <td class="cell-num">40 pts</td>
+          <td>684 participants</td>
+          <td class="cell-mono">EVT-CULT</td>
+          <td><span class="badge muted">ended</span></td>
+          <td><button class="btn-sm" style="padding:6px 12px;">QR / Edit</button></td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <div class="form-panel" style="margin-top: 40px;">
+      <div class="form-panel-title">Add / Edit Event</div>
+      <div class="form-panel-sub">Create a point-earning event or one-time action. A unique check-in QR code will be auto-generated.</div>
+      <div class="form-grid-2">
+        <div class="field-block">
+          <label>Event Name</label>
+          <input type="text" placeholder="e.g., Sunset Music Session" />
+        </div>
+        <div class="field-block">
+          <label>Type</label>
+          <select><option>Daily action</option><option>Live music</option><option>Game</option><option>Workshop</option><option>Performance</option><option>Sign-up bonus</option></select>
+        </div>
+        <div class="field-block">
+          <label>Points per Check-in</label>
+          <input type="number" placeholder="50" />
+        </div>
+        <div class="field-block">
+          <label>Max Check-ins per Member</label>
+          <input type="number" placeholder="1" />
+        </div>
+        <div class="field-block">
+          <label>Start Date / Time</label>
+          <input type="text" placeholder="01 Aug 2026, 18:00" />
+        </div>
+        <div class="field-block">
+          <label>End Date / Time</label>
+          <input type="text" placeholder="01 Aug 2026, 21:00" />
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; margin-top:24px; justify-content:flex-end;">
+        <button class="btn-sm">Cancel</button>
+        <button class="btn-sm primary">Save &amp; Generate QR</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

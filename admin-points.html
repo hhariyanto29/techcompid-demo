@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Points — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points & Rewards</div>
+    <a href="admin-points.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+
+  <div class="main-area">
+
+    <div class="main-head">
+      <div class="main-title">
+        <em>Points Management</em>
+        Rules, audit log, manual adjustments
+      </div>
+      <div class="main-actions">
+        <button class="btn-sm"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Export</button>
+      </div>
+    </div>
+
+    <div class="kpi-grid" style="margin-bottom:32px;">
+      <div class="kpi"><div class="kpi-label">Points Issued</div><div class="kpi-value">284K</div><div class="kpi-delta">cumulative</div></div>
+      <div class="kpi"><div class="kpi-label">Points Redeemed</div><div class="kpi-value">42K</div><div class="kpi-delta">14.8% redemption</div></div>
+      <div class="kpi"><div class="kpi-label">Outstanding Liability</div><div class="kpi-value">242K</div><div class="kpi-delta">≈ Rp 24.2M (1pt = Rp 100)</div></div>
+      <div class="kpi"><div class="kpi-label">Manual Adjustments</div><div class="kpi-value">38</div><div class="kpi-delta">this month</div></div>
+    </div>
+
+    <div class="form-panel">
+      <div class="form-panel-title">Point Earning Rules</div>
+      <div class="form-panel-sub">Define how members earn points across the festival.</div>
+      <div class="form-grid-3">
+        <div class="field-block">
+          <label>Transaction Rate</label>
+          <div class="field-value">Rp 10,000 <em>= 1 pt</em></div>
+        </div>
+        <div class="field-block">
+          <label>Registration Bonus</label>
+          <div class="field-value">10 <em>pts</em></div>
+        </div>
+        <div class="field-block">
+          <label>Daily Check-in</label>
+          <div class="field-value">5 <em>pts</em></div>
+        </div>
+        <div class="field-block">
+          <label>First Visit Bonus</label>
+          <div class="field-value">20 <em>pts</em></div>
+        </div>
+        <div class="field-block">
+          <label>Event Attendance</label>
+          <div class="field-value">50 <em>pts</em></div>
+        </div>
+        <div class="field-block">
+          <label>Referral Bonus</label>
+          <div class="field-value">100 <em>pts</em></div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; margin-top:24px; justify-content:flex-end;">
+        <button class="btn-sm">Reset</button>
+        <button class="btn-sm primary">Save Rules</button>
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <div class="form-panel-title">Manual Point Adjustment</div>
+      <div class="form-panel-sub">Award or deduct points for a specific member. All adjustments are logged.</div>
+      <div class="form-grid-3">
+        <div class="field-block">
+          <label>Member ID or Name</label>
+          <input type="text" placeholder="Search member..." />
+        </div>
+        <div class="field-block">
+          <label>Adjustment Type</label>
+          <select><option>Award (+)</option><option>Deduct (−)</option></select>
+        </div>
+        <div class="field-block">
+          <label>Amount (pts)</label>
+          <input type="number" placeholder="0" />
+        </div>
+        <div class="field-block" style="grid-column: span 3;">
+          <label>Reason (required for audit)</label>
+          <input type="text" placeholder="e.g., compensation for failed redemption" />
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; margin-top:24px; justify-content:flex-end;">
+        <button class="btn-sm">Cancel</button>
+        <button class="btn-sm gold">Apply Adjustment</button>
+      </div>
+    </div>
+
+    <div class="form-panel" style="padding: 0;">
+      <div style="padding: 28px 32px; border-bottom: 1px solid var(--line); display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div class="form-panel-title" style="margin:0;">Points Audit Log</div>
+          <div class="form-panel-sub" style="margin:0; margin-top:4px;">Recent point transactions across all members.</div>
+        </div>
+        <button class="btn-sm">Export Log</button>
+      </div>
+      <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr>
+          <th>Time</th><th>Member</th><th>Source</th><th>Change</th><th>Balance After</th><th>Reference</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><div class="cell-meta" style="margin:0;">19 May, 14:32</div></td><td><div class="cell-name">Anastasia Wijaya</div></td><td><span class="badge muted">Transaction</span></td><td class="cell-num">+ 8 pts</td><td>2,840 pts</td><td class="cell-mono">TXN-039428</td></tr>
+          <tr><td><div class="cell-meta" style="margin:0;">19 May, 13:08</div></td><td><div class="cell-name">Rizky Pratama</div></td><td><span class="badge gold">Event check-in</span></td><td class="cell-num">+ 50 pts</td><td>4,120 pts</td><td class="cell-mono">EVT-Sunset-19</td></tr>
+          <tr><td><div class="cell-meta" style="margin:0;">19 May, 12:14</div></td><td><div class="cell-name">Mei Lin Tan</div></td><td><span class="badge muted">Transaction</span></td><td class="cell-num">+ 14 pts</td><td>1,560 pts</td><td class="cell-mono">TXN-039426</td></tr>
+          <tr><td><div class="cell-meta" style="margin:0;">19 May, 11:42</div></td><td><div class="cell-name">Putri Maharani</div></td><td><span class="badge danger">Redemption</span></td><td class="cell-num" style="color:var(--muted);">− 50 pts</td><td>980 pts</td><td class="cell-mono">RDM-04827</td></tr>
+          <tr><td><div class="cell-meta" style="margin:0;">19 May, 10:08</div></td><td><div class="cell-name">David Anderson</div></td><td><span class="badge warn">Manual adjustment</span></td><td class="cell-num">+ 200 pts</td><td>3,210 pts</td><td class="cell-mono">ADJ-238 (admin: M.S.)</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

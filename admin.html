@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Overview — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points & Rewards</div>
+    <a href="admin-points.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+
+  <div class="main-area">
+
+    <div class="main-head">
+      <div class="main-title">
+        <em>Today, 19 May 2026</em>
+        Festival overview
+      </div>
+      <div class="main-actions">
+        <button class="btn-sm"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Export</button>
+      </div>
+    </div>
+
+    <!-- Primary KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">Registered Members</div>
+        <div class="kpi-value">8,412</div>
+        <div class="kpi-delta">+342 today</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Visitors / Check-ins</div>
+        <div class="kpi-value">9,847</div>
+        <div class="kpi-delta">↑ 4.2% vs avg</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Transactions</div>
+        <div class="kpi-value">3,218</div>
+        <div class="kpi-delta">+218 today</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Revenue / GMV</div>
+        <div class="kpi-value">Rp 284M</div>
+        <div class="kpi-delta">↑ 8.4% vs yesterday</div>
+      </div>
+    </div>
+
+    <!-- Secondary KPIs -->
+    <div class="kpi-grid" style="margin-bottom: 40px;">
+      <div class="kpi">
+        <div class="kpi-label">Points Issued</div>
+        <div class="kpi-value">284K</div>
+        <div class="kpi-delta">cumulative</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Points Redeemed</div>
+        <div class="kpi-value">42K</div>
+        <div class="kpi-delta">14.8% redemption rate</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Average Spending</div>
+        <div class="kpi-value">Rp 88K</div>
+        <div class="kpi-delta">per transaction</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Pending Settlement</div>
+        <div class="kpi-value">Rp 38M</div>
+        <div class="kpi-delta">to be paid out tomorrow</div>
+      </div>
+    </div>
+
+    <div class="admin-cols">
+      <div class="chart-panel">
+        <div class="panel-head" style="border:none; padding:0; margin-bottom: 4px;">
+          <div class="panel-title">Visitor flow · last 7 days</div>
+          <a class="panel-link">Compare →</a>
+        </div>
+        <svg class="chart-svg" viewBox="0 0 600 240" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c9a961" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#c9a961" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="0" y1="60" x2="600" y2="60" stroke="#d9cfb8" stroke-dasharray="2,4"/>
+          <line x1="0" y1="120" x2="600" y2="120" stroke="#d9cfb8" stroke-dasharray="2,4"/>
+          <line x1="0" y1="180" x2="600" y2="180" stroke="#d9cfb8" stroke-dasharray="2,4"/>
+          <path d="M 30,180 L 110,140 L 190,160 L 270,100 L 350,120 L 430,70 L 510,90 L 570,50 L 570,220 L 30,220 Z" fill="url(#chartGrad)"/>
+          <path d="M 30,180 L 110,140 L 190,160 L 270,100 L 350,120 L 430,70 L 510,90 L 570,50" stroke="#0b3a2e" stroke-width="2" fill="none"/>
+          <circle cx="30" cy="180" r="4" fill="#c9a961"/><circle cx="110" cy="140" r="4" fill="#c9a961"/>
+          <circle cx="190" cy="160" r="4" fill="#c9a961"/><circle cx="270" cy="100" r="4" fill="#c9a961"/>
+          <circle cx="350" cy="120" r="4" fill="#c9a961"/><circle cx="430" cy="70" r="4" fill="#c9a961"/>
+          <circle cx="510" cy="90" r="4" fill="#c9a961"/>
+          <circle cx="570" cy="50" r="6" fill="#0b3a2e" stroke="#c9a961" stroke-width="2"/>
+          <text x="30" y="235" font-family="Outfit" font-size="10" fill="#6b6358" text-anchor="middle">Mon</text>
+          <text x="110" y="235" font-family="Outfit" font-size="10" fill="#6b6358" text-anchor="middle">Tue</text>
+          <text x="190" y="235" font-family="Outfit" font-size="10" fill="#6b6358" text-anchor="middle">Wed</text>
+          <text x="270" y="235" font-family="Outfit" font-size="10" fill="#6b6358" text-anchor="middle">Thu</text>
+          <text x="350" y="235" font-family="Outfit" font-size="10" fill="#6b6358" text-anchor="middle">Fri</text>
+          <text x="430" y="235" font-family="Outfit" font-size="10" fill="#6b6358" text-anchor="middle">Sat</text>
+          <text x="510" y="235" font-family="Outfit" font-size="10" fill="#6b6358" text-anchor="middle">Sun</text>
+          <text x="570" y="235" font-family="Outfit" font-size="10" fill="#0b3a2e" font-weight="600" text-anchor="middle">Today</text>
+        </svg>
+      </div>
+
+      <div class="table-panel">
+        <div class="tp-head">
+          <div class="tp-title">Top Merchants</div>
+          <a class="panel-link" href="admin-merchants.html">All →</a>
+        </div>
+        <div class="tp-row"><div><div class="tp-merchant">Warung Ibu Made</div><div class="tp-category">F&amp;B · Local Cuisine</div></div><div class="tp-amt">Rp 42.8M</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">Sari Bali Batik</div><div class="tp-category">Fashion · UMKM</div></div><div class="tp-amt">Rp 31.2M</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">Bali Artisan Coffee</div><div class="tp-category">Beverages</div></div><div class="tp-amt">Rp 28.9M</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">Pasar Senggol</div><div class="tp-category">Marketplace</div></div><div class="tp-amt">Rp 22.4M</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">Ubud Crafts Co.</div><div class="tp-category">Handcraft</div></div><div class="tp-amt">Rp 18.7M</div></div>
+      </div>
+    </div>
+
+    <div class="admin-cols" style="margin-top: 32px;">
+      <div class="table-panel">
+        <div class="tp-head">
+          <div class="tp-title">Top Rewards (Redeemed)</div>
+          <a class="panel-link" href="admin-rewards.html">Manage →</a>
+        </div>
+        <div class="tp-row"><div><div class="tp-merchant">Festival Tote</div><div class="tp-category">50 pts · 142 in stock</div></div><div class="tp-amt">847 redeemed</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">Tumbler Edition</div><div class="tp-category">120 pts · 67 in stock</div></div><div class="tp-amt">412 redeemed</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">Discovery Cap</div><div class="tp-category">180 pts · 23 in stock</div></div><div class="tp-amt">218 redeemed</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">Linen Pouch</div><div class="tp-category">240 pts · 89 in stock</div></div><div class="tp-amt">156 redeemed</div></div>
+      </div>
+
+      <div class="table-panel">
+        <div class="tp-head">
+          <div class="tp-title">Recent Transactions</div>
+          <a class="panel-link" href="admin-transactions.html">All →</a>
+        </div>
+        <div class="tp-row"><div><div class="tp-merchant">TXN-039428</div><div class="tp-category">A. Wijaya · Warung Ibu Made</div></div><div class="tp-amt">Rp 85K</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">TXN-039427</div><div class="tp-category">R. Putra · Bali Artisan Coffee</div></div><div class="tp-amt">Rp 42K</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">TXN-039426</div><div class="tp-category">M. Sari · Sari Bali Batik</div></div><div class="tp-amt">Rp 220K</div></div>
+        <div class="tp-row"><div><div class="tp-merchant">TXN-039425</div><div class="tp-category">D. Pratama · Pasar Senggol</div></div><div class="tp-amt">Rp 68K</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

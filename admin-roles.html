@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Roles — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points & Rewards</div>
+    <a href="admin-points.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+
+  <div class="main-area">
+
+    <div class="main-head">
+      <div class="main-title">
+        <em>Admin Roles</em>
+        Manage who can access what
+      </div>
+      <div class="main-actions">
+        <button class="btn-sm"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Export</button>
+      </div>
+    </div>
+
+    <div class="role-list" style="margin-bottom: 40px;">
+      <div class="role-card">
+        <div>
+          <div class="role-name">Super Admin</div>
+          <div class="role-desc">Full access to all dashboards, settings, and configuration. Can manage other admins and override any value.</div>
+          <div class="role-count">2 admins assigned</div>
+        </div>
+        <button class="btn-sm">Manage</button>
+      </div>
+      <div class="role-card">
+        <div>
+          <div class="role-name">Finance / Settlement</div>
+          <div class="role-desc">Access to transactions, merchant settlement, reports, and export. Read-only on members and events.</div>
+          <div class="role-count">3 admins assigned</div>
+        </div>
+        <button class="btn-sm">Manage</button>
+      </div>
+      <div class="role-card">
+        <div>
+          <div class="role-name">Redemption Staff</div>
+          <div class="role-desc">Access to redemption dashboard and staff scanner only. Can confirm redeemed rewards at booths.</div>
+          <div class="role-count">6 staff assigned</div>
+        </div>
+        <button class="btn-sm">Manage</button>
+      </div>
+      <div class="role-card">
+        <div>
+          <div class="role-name">Merchant / Booth Staff</div>
+          <div class="role-desc">Limited access to tenant dashboard for their assigned booth only. Cannot view other merchants' data.</div>
+          <div class="role-count">203 merchants invited</div>
+        </div>
+        <button class="btn-sm">Manage</button>
+      </div>
+    </div>
+
+    <div class="form-panel" style="padding:0;">
+      <div style="padding: 28px 32px; border-bottom: 1px solid var(--line); display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div class="form-panel-title" style="margin:0;">Active Admins</div>
+          <div class="form-panel-sub" style="margin:0; margin-top:4px;">11 admin accounts active across all roles.</div>
+        </div>
+        <button class="btn-sm primary">+ Invite Admin</button>
+      </div>
+      <div style="overflow-x:auto;">
+      <table class="data-table">
+        <thead><tr>
+          <th>Name</th><th>Email</th><th>Role</th><th>Last Active</th><th>Status</th><th></th>
+        </tr></thead>
+        <tbody>
+          <tr><td><div class="cell-name">Maya Setiawan</div></td><td>maya.s@discoverymall.id</td><td><span class="badge gold">Super Admin</span></td><td><div class="cell-meta" style="margin:0;">2 minutes ago</div></td><td><span class="badge success">active</span></td><td><button class="btn-sm" style="padding:6px 10px;">Edit</button></td></tr>
+          <tr><td><div class="cell-name">Reza Hartono</div></td><td>reza.h@discoverymall.id</td><td><span class="badge gold">Super Admin</span></td><td><div class="cell-meta" style="margin:0;">18 minutes ago</div></td><td><span class="badge success">active</span></td><td><button class="btn-sm" style="padding:6px 10px;">Edit</button></td></tr>
+          <tr><td><div class="cell-name">Indah Permata</div></td><td>indah.p@discoverymall.id</td><td><span class="badge muted">Finance</span></td><td><div class="cell-meta" style="margin:0;">1 hour ago</div></td><td><span class="badge success">active</span></td><td><button class="btn-sm" style="padding:6px 10px;">Edit</button></td></tr>
+          <tr><td><div class="cell-name">Bayu Wicaksono</div></td><td>bayu.w@discoverymall.id</td><td><span class="badge muted">Finance</span></td><td><div class="cell-meta" style="margin:0;">3 hours ago</div></td><td><span class="badge success">active</span></td><td><button class="btn-sm" style="padding:6px 10px;">Edit</button></td></tr>
+          <tr><td><div class="cell-name">Citra Lestari</div></td><td>citra.l@discoverymall.id</td><td><span class="badge muted">Redemption</span></td><td><div class="cell-meta" style="margin:0;">12 minutes ago</div></td><td><span class="badge success">active</span></td><td><button class="btn-sm" style="padding:6px 10px;">Edit</button></td></tr>
+          <tr><td><div class="cell-name">Eko Nugroho</div></td><td>eko.n@discoverymall.id</td><td><span class="badge muted">Redemption</span></td><td><div class="cell-meta" style="margin:0;">2 days ago</div></td><td><span class="badge warn">inactive</span></td><td><button class="btn-sm" style="padding:6px 10px;">Edit</button></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

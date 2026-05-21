@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Rewards — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points & Rewards</div>
+    <a href="admin-points.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+
+  <div class="main-area">
+
+    <div class="main-head">
+      <div class="main-title">
+        <em>Rewards / Merchandise</em>
+        6 active rewards · 1,723 redeemed total
+      </div>
+      <div class="main-actions">
+        <button class="btn-sm"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Export</button>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-input" placeholder="Search reward..." />
+      <select class="filter-select">
+        <option>All Status</option><option>Available</option><option>Sold Out</option>
+      </select>
+      <select class="filter-select">
+        <option>Sort: Most Redeemed</option><option>Lowest Points</option><option>Highest Points</option><option>Low Stock First</option>
+      </select>
+      <button class="btn-sm primary" style="margin-left:auto;">+ Add Reward</button>
+    </div>
+
+    <div class="rewards-grid">
+      <div class="reward-card">
+        <div class="reward-thumb t1">
+          <div class="reward-badge"><span class="badge success">available</span></div>
+        </div>
+        <div class="reward-body">
+          <div class="reward-name">Festival Tote</div>
+          <div class="cell-meta" style="margin:0;">847 redeemed all time</div>
+          <div class="reward-meta">
+            <div class="reward-cost">50 pts</div>
+            <div class="reward-stock">142 in stock</div>
+          </div>
+        </div>
+      </div>
+      <div class="reward-card">
+        <div class="reward-thumb t2">
+          <div class="reward-badge"><span class="badge success">available</span></div>
+        </div>
+        <div class="reward-body">
+          <div class="reward-name">Tumbler Edition</div>
+          <div class="cell-meta" style="margin:0;">412 redeemed all time</div>
+          <div class="reward-meta">
+            <div class="reward-cost">120 pts</div>
+            <div class="reward-stock">67 in stock</div>
+          </div>
+        </div>
+      </div>
+      <div class="reward-card">
+        <div class="reward-thumb t3">
+          <div class="reward-badge"><span class="badge success">available</span></div>
+        </div>
+        <div class="reward-body">
+          <div class="reward-name">Discovery Cap</div>
+          <div class="cell-meta" style="margin:0;">218 redeemed all time</div>
+          <div class="reward-meta">
+            <div class="reward-cost">180 pts</div>
+            <div class="reward-stock">23 in stock</div>
+          </div>
+        </div>
+      </div>
+      <div class="reward-card">
+        <div class="reward-thumb t4">
+          <div class="reward-badge"><span class="badge success">available</span></div>
+        </div>
+        <div class="reward-body">
+          <div class="reward-name">Linen Pouch</div>
+          <div class="cell-meta" style="margin:0;">156 redeemed all time</div>
+          <div class="reward-meta">
+            <div class="reward-cost">240 pts</div>
+            <div class="reward-stock">89 in stock</div>
+          </div>
+        </div>
+      </div>
+      <div class="reward-card">
+        <div class="reward-thumb t5">
+          <div class="reward-badge"><span class="badge danger">sold out</span></div>
+        </div>
+        <div class="reward-body">
+          <div class="reward-name">Premium Hamper</div>
+          <div class="cell-meta" style="margin:0;">62 redeemed all time</div>
+          <div class="reward-meta">
+            <div class="reward-cost">500 pts</div>
+            <div class="reward-stock">0 in stock</div>
+          </div>
+        </div>
+      </div>
+      <div class="reward-card">
+        <div class="reward-thumb t6">
+          <div class="reward-badge"><span class="badge success">available</span></div>
+        </div>
+        <div class="reward-body">
+          <div class="reward-name">Bali Spa Voucher</div>
+          <div class="cell-meta" style="margin:0;">28 redeemed all time</div>
+          <div class="reward-meta">
+            <div class="reward-cost">800 pts</div>
+            <div class="reward-stock">12 in stock</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-panel" style="margin-top: 40px;">
+      <div class="form-panel-title">Add / Edit Reward</div>
+      <div class="form-panel-sub">Define merchandise available for redemption.</div>
+      <div class="form-grid-2">
+        <div class="field-block">
+          <label>Reward Name</label>
+          <input type="text" placeholder="e.g., Festival Tote" />
+        </div>
+        <div class="field-block">
+          <label>Category</label>
+          <select><option>Merchandise</option><option>Voucher</option><option>Experience</option></select>
+        </div>
+        <div class="field-block">
+          <label>Points Required</label>
+          <input type="number" placeholder="50" />
+        </div>
+        <div class="field-block">
+          <label>Initial Stock</label>
+          <input type="number" placeholder="100" />
+        </div>
+        <div class="field-block" style="grid-column: span 2;">
+          <label>Description</label>
+          <input type="text" placeholder="Short description shown on member dashboard..." />
+        </div>
+        <div class="field-block" style="grid-column: span 2;">
+          <label>Upload Image</label>
+          <div style="border: 1px dashed var(--line); padding: 24px; text-align: center; color: var(--muted); font-size: 12px;">
+            Drag &amp; drop image here, or <a style="color: var(--gold); cursor: pointer;">browse files</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; margin-top:24px; justify-content:flex-end;">
+        <button class="btn-sm">Cancel</button>
+        <button class="btn-sm primary">Save Reward</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

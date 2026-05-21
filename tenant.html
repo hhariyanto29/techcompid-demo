@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Merchant POS — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="active">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+
+<main class="page-wrap">
+
+<section class="pos-wrap">
+  <div class="pos-head">
+    <div class="pos-shop">
+      <em>UMKM Merchant · Stand B-14</em>
+      Warung Ibu Made
+    </div>
+    <div class="pos-status-row">
+      <div class="pos-status">POS Online</div>
+    </div>
+  </div>
+
+  <!-- POS APP: scanner + transaction form -->
+  <div class="pos-cols">
+
+    <!-- LEFT: Scanner -->
+    <div class="pos-scanner">
+      <div class="pos-scanner-eyebrow">Step 01 · Scan</div>
+      <div class="pos-scanner-title">Scan customer's <em>Festival Pass</em></div>
+
+      <div class="pos-cam">
+        <div class="corners"></div>
+        <div class="pos-cam-scanline"></div>
+        <div class="pos-cam-hint">Point camera at member's QR</div>
+      </div>
+
+      <div class="pos-scan-actions">
+        <button class="pos-scan-btn">Enter ID Manually</button>
+        <button class="pos-scan-btn primary">Open Camera</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Transaction form -->
+    <div class="pos-form">
+      <div class="pos-form-step">Step 02 · Charge</div>
+      <div class="pos-form-title">Enter transaction <em>amount</em></div>
+
+      <div class="pos-detected">
+        <div class="pos-detected-label">Member Detected</div>
+        <div class="pos-detected-name">Anastasia Wijaya</div>
+        <div class="pos-detected-id">DKF · 04827 · Bronze Tier</div>
+      </div>
+
+      <div class="pos-amount">
+        <div class="pos-amount-label">Transaction Amount</div>
+        <div class="pos-amount-input">
+          <span class="pos-amount-currency">Rp</span>
+          <input type="text" value="85,000" id="posAmount" />
+        </div>
+      </div>
+
+      <div class="pos-pts-preview">
+        <div class="pos-pts-label">Member will earn</div>
+        <div class="pos-pts-value" id="posPtsPreview">+ 8 pts</div>
+      </div>
+
+      <button class="pos-send-btn" id="posSendBtn">Send Payment Request →</button>
+
+      <div class="pos-pending" id="posPending" style="display:none;">
+        <div class="pos-pending-spinner"></div>
+        <div>Waiting for customer to approve payment on their phone…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTLEMENT SUMMARY -->
+  <div class="settlement-card">
+    <div class="settlement-eyebrow">Pending Settlement · Next payout 21 May 2026</div>
+    <div class="settlement-grid">
+      <div>
+        <div class="settlement-main-value">Rp 4.2<em>M</em></div>
+        <div class="settlement-main-label">Total to be settled to your bank account · daily payout schedule</div>
+      </div>
+      <div>
+        <div class="settlement-side-label">Transactions Today</div>
+        <div class="settlement-side-value">48</div>
+      </div>
+      <div>
+        <div class="settlement-side-label">Avg. Spending</div>
+        <div class="settlement-side-value">Rp 87K</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI strip -->
+  <div class="tenant-kpis" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 40px;">
+    <div class="t-kpi">
+      <div class="t-kpi-label">This Week</div>
+      <div class="t-kpi-value">284</div>
+      <div class="t-kpi-delta">Rp 28.9M revenue</div>
+    </div>
+    <div class="t-kpi">
+      <div class="t-kpi-label">Total (Festival)</div>
+      <div class="t-kpi-value">1,847</div>
+      <div class="t-kpi-delta">Rp 184.2M revenue</div>
+    </div>
+    <div class="t-kpi">
+      <div class="t-kpi-label">Settled to Bank</div>
+      <div class="t-kpi-value">Rp 142M</div>
+      <div class="t-kpi-delta">via 8 payouts</div>
+    </div>
+    <div class="t-kpi">
+      <div class="t-kpi-label">Next Payout</div>
+      <div class="t-kpi-value" style="font-size: 22px; padding-top: 8px;">21 May</div>
+      <div class="t-kpi-delta">in 2 days</div>
+    </div>
+  </div>
+
+  <!-- Recent transactions -->
+  <div class="data-table-wrap">
+    <div class="tp-head" style="padding: 28px 32px; border-bottom: 1px solid var(--line);">
+      <div class="tp-title">Today's Transactions</div>
+      <a class="panel-link">Export →</a>
+    </div>
+    <table class="data-table">
+      <thead><tr>
+        <th>Time</th><th>Member</th><th>Amount</th><th>Method</th><th>Points Awarded</th><th>Status</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><div class="cell-meta" style="margin:0;">14:32</div></td><td><div class="cell-name">Anastasia Wijaya</div><div class="cell-meta">DKF · 04827</div></td><td><strong style="font-family:var(--display);font-size:16px;">Rp 85,000</strong></td><td><span class="badge muted">QRIS</span></td><td class="cell-num">+ 8 pts</td><td><span class="badge success">settled</span></td></tr>
+        <tr><td><div class="cell-meta" style="margin:0;">14:08</div></td><td><div class="cell-name">Rizky Pratama</div><div class="cell-meta">DKF · 03291</div></td><td><strong style="font-family:var(--display);font-size:16px;">Rp 62,000</strong></td><td><span class="badge muted">GoPay</span></td><td class="cell-num">+ 6 pts</td><td><span class="badge success">settled</span></td></tr>
+        <tr><td><div class="cell-meta" style="margin:0;">13:51</div></td><td><div class="cell-name">Mei Lin Tan</div><div class="cell-meta">DKF · 07104</div></td><td><strong style="font-family:var(--display);font-size:16px;">Rp 142,000</strong></td><td><span class="badge muted">QRIS</span></td><td class="cell-num">+ 14 pts</td><td><span class="badge success">settled</span></td></tr>
+        <tr><td><div class="cell-meta" style="margin:0;">13:24</div></td><td><div class="cell-name">David Anderson</div><div class="cell-meta">DKF · 02856</div></td><td><strong style="font-family:var(--display);font-size:16px;">Rp 95,000</strong></td><td><span class="badge muted">Credit Card</span></td><td class="cell-num">+ 9 pts</td><td><span class="badge warn">pending settlement</span></td></tr>
+        <tr><td><div class="cell-meta" style="margin:0;">12:48</div></td><td><div class="cell-name">Putri Maharani</div><div class="cell-meta">DKF · 05943</div></td><td><strong style="font-family:var(--display);font-size:16px;">Rp 48,000</strong></td><td><span class="badge muted">OVO</span></td><td class="cell-num">+ 4 pts</td><td><span class="badge warn">pending settlement</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- How it works (compact, for new merchants) -->
+  <div class="mc-instructions" style="margin-top: 48px;">
+    <div class="mc-instructions-title">How payment works</div>
+    <div class="mc-instructions-sub">Discovery Mall collects every transaction. We settle to your bank account daily.</div>
+
+    <div class="mc-step">
+      <div class="mc-step-num">i.</div>
+      <div>
+        <div class="mc-step-title">Customer shows their Festival Pass QR</div>
+        <div class="mc-step-body">You scan it with this POS app. The customer's name and member tier appear on your screen.</div>
+      </div>
+    </div>
+    <div class="mc-step">
+      <div class="mc-step-num">ii.</div>
+      <div>
+        <div class="mc-step-title">Enter the bill amount, send the payment request</div>
+        <div class="mc-step-body">A payment request is pushed to the customer's phone with the amount you entered.</div>
+      </div>
+    </div>
+    <div class="mc-step">
+      <div class="mc-step-num">iii.</div>
+      <div>
+        <div class="mc-step-title">Customer pays via QRIS, e-wallet, or card</div>
+        <div class="mc-step-body">Payment flows to <strong>Discovery Mall's merchant account</strong>. You'll see the transaction land in real-time on this dashboard.</div>
+      </div>
+    </div>
+    <div class="mc-step">
+      <div class="mc-step-num">iv.</div>
+      <div>
+        <div class="mc-step-title">Daily payout to your bank account</div>
+        <div class="mc-step-body">Discovery Mall settles your transactions <strong>every day</strong> via bank transfer. Payout schedule visible above.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<script src="scripts.js"></script>
+<script>
+  // Demo: type to update points preview, click Send to show pending state
+  document.addEventListener('DOMContentLoaded', () => {
+    const amt = document.getElementById('posAmount');
+    const ptsPreview = document.getElementById('posPtsPreview');
+    const sendBtn = document.getElementById('posSendBtn');
+    const pending = document.getElementById('posPending');
+
+    if (amt && ptsPreview) {
+      amt.addEventListener('input', e => {
+        const raw = e.target.value.replace(/[^\d]/g, '');
+        if (!raw) { ptsPreview.textContent = '+ 0 pts'; return; }
+        const num = parseInt(raw, 10);
+        const pts = Math.floor(num / 10000);
+        e.target.value = num.toLocaleString('en-US');
+        ptsPreview.textContent = `+ ${pts.toLocaleString('en-US')} pts`;
+      });
+    }
+    if (sendBtn && pending) {
+      sendBtn.addEventListener('click', () => {
+        pending.style.display = 'flex';
+        sendBtn.textContent = 'Payment Request Sent';
+        sendBtn.disabled = true;
+        sendBtn.style.opacity = '0.6';
+        setTimeout(() => {
+          pending.innerHTML = '<div style="color: var(--emerald-light); font-weight: 500;">✓ Payment confirmed · Rp 85,000 received · Points credited</div>';
+          pending.style.background = 'rgba(31, 107, 83, 0.1)';
+          pending.style.borderLeftColor = 'var(--emerald-light)';
+        }, 2500);
+      });
+    }
+  });
+</script>
+</body>
+</html>

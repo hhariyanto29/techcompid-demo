@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Transactions — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points & Rewards</div>
+    <a href="admin-points.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+
+  <div class="main-area">
+
+    <div class="main-head">
+      <div class="main-title">
+        <em>Transaction Dashboard</em>
+        3,218 transactions today · Rp 284M
+      </div>
+      <div class="main-actions">
+        <button class="btn-sm"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Export</button>
+      </div>
+    </div>
+
+    <!-- Quick KPIs -->
+    <div class="kpi-grid" style="margin-bottom:32px;">
+      <div class="kpi"><div class="kpi-label">Successful</div><div class="kpi-value">2,847</div><div class="kpi-delta">88.4% success rate</div></div>
+      <div class="kpi"><div class="kpi-label">Pending</div><div class="kpi-value">218</div><div class="kpi-delta">processing</div></div>
+      <div class="kpi"><div class="kpi-label">Failed</div><div class="kpi-value">94</div><div class="kpi-delta down">2.9% failure</div></div>
+      <div class="kpi"><div class="kpi-label">Refunded</div><div class="kpi-value">59</div><div class="kpi-delta">1.8%</div></div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-input" placeholder="Search transaction ID, member, merchant..." />
+      <select class="filter-select">
+        <option>All Status</option><option>Success</option><option>Pending</option><option>Failed</option><option>Refunded</option>
+      </select>
+      <select class="filter-select">
+        <option>All Methods</option><option>QRIS</option><option>Credit Card</option><option>E-Wallet</option><option>Cash</option>
+      </select>
+      <select class="filter-select">
+        <option>Today</option><option>Yesterday</option><option>Last 7 days</option><option>Custom range</option>
+      </select>
+      <button class="btn-sm primary" style="margin-left:auto;">Export CSV</button>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr>
+          <th>Trxn ID</th><th>Member</th><th>Merchant</th>
+          <th>Amount</th><th>Method</th><th>Points</th><th>Time</th><th>Status</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td class="cell-mono">TXN-039428</td>
+          <td><div class="cell-name">Anastasia Wijaya</div></td>
+          <td>Warung Ibu Made</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 85,000</strong></td>
+          <td><span class="badge muted">QRIS</span></td>
+          <td class="cell-num">+ 8 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 14:32</div></td>
+          <td><span class="badge success">success</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039427</td>
+          <td><div class="cell-name">Rizky Pratama</div></td>
+          <td>Bali Artisan Coffee</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 42,000</strong></td>
+          <td><span class="badge muted">Cash</span></td>
+          <td class="cell-num">+ 4 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 14:28</div></td>
+          <td><span class="badge success">success</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039426</td>
+          <td><div class="cell-name">Mei Lin Tan</div></td>
+          <td>Sari Bali Batik</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 220,000</strong></td>
+          <td><span class="badge muted">Credit Card</span></td>
+          <td class="cell-num">+ 22 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 14:21</div></td>
+          <td><span class="badge success">success</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039425</td>
+          <td><div class="cell-name">David Anderson</div></td>
+          <td>Pasar Senggol</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 68,000</strong></td>
+          <td><span class="badge muted">E-Wallet</span></td>
+          <td class="cell-num">+ 6 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 14:15</div></td>
+          <td><span class="badge success">success</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039424</td>
+          <td><div class="cell-name">Putri Maharani</div></td>
+          <td>Ubud Crafts Co.</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 145,000</strong></td>
+          <td><span class="badge muted">QRIS</span></td>
+          <td class="cell-num">+ 14 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 14:08</div></td>
+          <td><span class="badge warn">pending</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039423</td>
+          <td><div class="cell-name">Budi Santoso</div></td>
+          <td>Sound of Bali</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 320,000</strong></td>
+          <td><span class="badge muted">Credit Card</span></td>
+          <td class="cell-num">0 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 13:54</div></td>
+          <td><span class="badge danger">failed</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039422</td>
+          <td><div class="cell-name">Sari Dewi</div></td>
+          <td>Tropical Smoothie</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 28,000</strong></td>
+          <td><span class="badge muted">Cash</span></td>
+          <td class="cell-num">+ 2 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 13:48</div></td>
+          <td><span class="badge success">success</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039421</td>
+          <td><div class="cell-name">John Carter</div></td>
+          <td>Nasi Ayam Pak Eko</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 55,000</strong></td>
+          <td><span class="badge muted">E-Wallet</span></td>
+          <td class="cell-num">+ 5 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 13:32</div></td>
+          <td><span class="badge success">success</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039420</td>
+          <td><div class="cell-name">Ahmad Faisal</div></td>
+          <td>Warung Ibu Made</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 95,000</strong></td>
+          <td><span class="badge muted">QRIS</span></td>
+          <td class="cell-num">- 9 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 13:21</div></td>
+          <td><span class="badge gold">refunded</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">TXN-039419</td>
+          <td><div class="cell-name">Lina Wijoyo</div></td>
+          <td>Bali Artisan Coffee</td>
+          <td><strong style="font-family:var(--display);font-size:16px;">Rp 38,000</strong></td>
+          <td><span class="badge muted">Cash</span></td>
+          <td class="cell-num">+ 3 pts</td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 13:08</div></td>
+          <td><span class="badge success">success</span></td>
+        </tr></tbody>
+      </table>
+      <div class="table-foot">
+        <div>Showing 1–10 of 3,218</div>
+        <div class="table-foot-actions">
+          <button class="page-btn">‹</button><button class="page-btn active">1</button>
+          <button class="page-btn">2</button><button class="page-btn">3</button>
+          <button class="page-btn">…</button><button class="page-btn">322</button>
+          <button class="page-btn">›</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

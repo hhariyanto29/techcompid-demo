@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Staff Scanner — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="active">Staff Scanner</a>
+      <a href="admin.html" class="">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+
+<main class="page-wrap">
+
+<section class="scanner-wrap">
+  <div class="scanner-head">
+    <div class="s-title">
+      <em>Staff Console</em>
+      Member Pass Scanner
+    </div>
+    <div class="s-mode-toggle">
+      <button class="active" data-mode="redeem">Redeem Booth</button>
+      <button data-mode="event">Event Check-in</button>
+    </div>
+  </div>
+
+  <!-- === REDEEM MODE === -->
+  <div class="mode-view" data-mode="redeem">
+    <div class="scanner-cols">
+      <div class="scan-panel">
+        <div class="scan-eyebrow">Step 01 · Redeem Booth</div>
+        <div class="scan-title">Scan member's Festival Pass</div>
+        <div class="scan-area">
+          <div class="scan-corners"></div>
+          <div class="scan-line"></div>
+        </div>
+        <div class="scan-hint">Aim camera at the member's QR</div>
+        <div class="scan-btn-row">
+          <button class="scan-btn">Enter ID Manually</button>
+          <button class="scan-btn primary">Open Camera</button>
+        </div>
+      </div>
+
+      <div class="verify-panel">
+        <div class="verify-status">Verified · Active Member</div>
+        <div class="verify-name">Anastasia Wijaya</div>
+        <div class="verify-id">DKF · 04827 · Bronze Tier</div>
+
+        <div class="verify-grid">
+          <div class="v-cell highlight">
+            <div class="v-label">Available Balance</div>
+            <div class="v-value">2,840<em>pts</em></div>
+          </div>
+          <div class="v-cell">
+            <div class="v-label">Member Since</div>
+            <div class="v-value">02 Aug 2026</div>
+          </div>
+        </div>
+
+        <div class="redeem-select">
+          <div class="redeem-select-label">Select item to redeem</div>
+          <div class="redeem-item selected">
+            <div class="redeem-item-thumb"></div>
+            <div>
+              <div class="redeem-item-name">Festival Tote</div>
+              <div class="redeem-item-stock">In stock · 142 remaining</div>
+            </div>
+            <div class="redeem-item-cost">50 pts</div>
+          </div>
+          <div class="redeem-item">
+            <div class="redeem-item-thumb t2"></div>
+            <div>
+              <div class="redeem-item-name">Tumbler Edition</div>
+              <div class="redeem-item-stock">In stock · 67 remaining</div>
+            </div>
+            <div class="redeem-item-cost">120 pts</div>
+          </div>
+          <div class="redeem-item">
+            <div class="redeem-item-thumb t3"></div>
+            <div>
+              <div class="redeem-item-name">Discovery Cap</div>
+              <div class="redeem-item-stock">In stock · 23 remaining</div>
+            </div>
+            <div class="redeem-item-cost">180 pts</div>
+          </div>
+        </div>
+
+        <button class="confirm-btn">Confirm Redemption · − 50 pts</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- === EVENT MODE === -->
+  <div class="mode-view" data-mode="event" style="display: none;">
+    <div class="scanner-cols">
+      <div class="scan-panel">
+        <div class="scan-eyebrow">Step 01 · Event Entry</div>
+        <div class="scan-title">Check member into event</div>
+        <div class="scan-area">
+          <div class="scan-corners"></div>
+          <div class="scan-line"></div>
+        </div>
+        <div class="scan-hint">Scan to record attendance</div>
+        <div class="scan-btn-row">
+          <button class="scan-btn">Enter ID Manually</button>
+          <button class="scan-btn primary">Open Camera</button>
+        </div>
+      </div>
+
+      <div class="verify-panel">
+        <div class="verify-status">Verified · Active Member</div>
+        <div class="verify-name">Anastasia Wijaya</div>
+        <div class="verify-id">DKF · 04827 · Bronze Tier</div>
+
+        <div class="verify-grid">
+          <div class="v-cell">
+            <div class="v-label">Active Event</div>
+            <div class="v-value" style="font-size:20px;">Sunset Music Session</div>
+          </div>
+          <div class="v-cell highlight">
+            <div class="v-label">Reward on Check-in</div>
+            <div class="v-value">+ 50<em>pts</em></div>
+          </div>
+        </div>
+
+        <div class="redeem-select">
+          <div class="redeem-select-label">Event details</div>
+          <div style="background: var(--cream); padding: 20px 24px; border-left: 3px solid var(--gold);">
+            <div style="font-family: var(--display); font-size: 22px; color: var(--emerald-deep); margin-bottom: 6px;">Sunset Music Session</div>
+            <div style="font-size: 12px; color: var(--muted); letter-spacing: 0.05em;">Beachfront Stage · 19 May, 18:00 — 21:00</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 10px;">Checked-in so far: <strong style="color: var(--emerald-deep);">147 members</strong></div>
+          </div>
+        </div>
+
+        <button class="confirm-btn event">Confirm Attendance · + 50 pts</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="scripts.js"></script>
+</body>
+</html>

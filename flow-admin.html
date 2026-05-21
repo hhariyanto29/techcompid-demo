@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Flow — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="flow.css">
+</head>
+<body>
+<header class="flow-topbar">
+  <a href="index.html" class="flow-brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="flow-tabs">
+    <a href="flow-member.html" class="">Member</a>
+    <a href="flow-merchant.html" class="">Merchant</a>
+    <a href="flow-admin.html" class="active">Admin</a>
+  </nav>
+  <div class="flow-meta">User Flow · v0.7</div>
+</header>
+<section class="flow-hero">
+  <div class="flow-hero-inner">
+    <div>
+      <div class="flow-eyebrow">User Walkthrough · Admin / Discovery Mall</div>
+      <h1 class="flow-title">The <em>admin console,</em> full visibility.</h1>
+      <p class="flow-subtitle">11 modules covering the entire festival operation — from member database and transaction streams to daily settlements, point rules, reward catalogues, event management, and reports.</p>
+    </div>
+    <div class="flow-hero-stats">
+        <div class="flow-stat">
+          <div class="flow-stat-num">11</div>
+          <div class="flow-stat-label">Admin Modules</div>
+        </div>
+        <div class="flow-stat">
+          <div class="flow-stat-num">4</div>
+          <div class="flow-stat-label">Role Tiers</div>
+        </div>
+        <div class="flow-stat">
+          <div class="flow-stat-num">Daily</div>
+          <div class="flow-stat-label">Settlement Cycle</div>
+        </div>
+    </div>
+  </div>
+</section>
+<section class="flow-steps">
+<div class="flow-step">
+        <div class="flow-step-info">
+          <div class="flow-step-num">01</div>
+          <div class="flow-step-title">Start with the <em>overview.</em></div>
+          <p class="flow-step-desc">Admin logs in to the Dashboard — the single pane of glass for festival operations. KPIs (members, visitors, transactions, revenue, points, redemptions, pending settlements) update in real-time.</p>
+          <div class="flow-step-key"><strong>KPIs at a glance:</strong> members, visitors, transactions, GMV, points, redemptions, pending settlement.</div>
+          <div class="flow-step-actions"><a href="admin.html" class="flow-link primary" target="_blank" rel="noopener">Open Admin Dashboard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin.html" loading="lazy" title="Start with the overview."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step reverse">
+        <div class="flow-step-info">
+          <div class="flow-step-num">02</div>
+          <div class="flow-step-title">Manage the <em>member database.</em></div>
+          <p class="flow-step-desc">Search, filter, inspect the full member list — every signup with demographics, transaction history, current balance. Export to CSV.</p>
+          <div class="flow-step-key"><strong>Per member:</strong> name, email, WhatsApp, country, signup date, points, spending, transactions, status.</div>
+          
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/members</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-members.html" loading="lazy" title="Manage the member database."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-info">
+          <div class="flow-step-num">03</div>
+          <div class="flow-step-title">Manage <em>merchants &amp; bank accounts.</em></div>
+          <p class="flow-step-desc">See all UMKM merchants, categories, booth locations, registered bank accounts (where settlements go), revenue, and settlement status. Add new merchants mid-festival.</p>
+          <div class="flow-step-key"><strong>Per merchant:</strong> name, category, booth, bank account, total transactions, revenue, avg spending, settlement.</div>
+          
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/merchants</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-merchants.html" loading="lazy" title="Manage merchants &amp; bank accounts."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step reverse">
+        <div class="flow-step-info">
+          <div class="flow-step-num">04</div>
+          <div class="flow-step-title">Audit every <em>transaction.</em></div>
+          <p class="flow-step-desc">Real-time transaction stream from all merchants. Filter by status, payment method, time range. This is the source of truth for revenue and settlement calculations.</p>
+          <div class="flow-step-key"><strong>Per transaction:</strong> TXN ID, member, merchant, amount, payment method, status, points credited, time.</div>
+          
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/transactions</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-transactions.html" loading="lazy" title="Audit every transaction."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-info">
+          <div class="flow-step-num">05</div>
+          <div class="flow-step-title">Run <em>settlements</em> to UMKM.</div>
+          <p class="flow-step-desc">Discovery Mall is the merchant of record — payment gateway funds all flow to Discovery first. Daily batch settles to each UMKM's bank account, net of MDR fees. Audit log preserves every payout.</p>
+          <div class="flow-step-key"><strong>Daily payout</strong> automatic at 09:00 WITA. Manual "Run Payout Now" available for special cases.</div>
+          <div class="flow-step-actions"><a href="admin-settlements.html" class="flow-link primary" target="_blank" rel="noopener">Open Settlements <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/settlements</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-settlements.html" loading="lazy" title="Run settlements to UMKM."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step reverse">
+        <div class="flow-step-info">
+          <div class="flow-step-num">06</div>
+          <div class="flow-step-title">Configure <em>point rules.</em></div>
+          <p class="flow-step-desc">Define how points are earned: transaction rate (Rp 10,000 = 1 pt), registration bonus, daily check-in, event attendance. Full audit log shows every point change, including manual admin adjustments.</p>
+          <div class="flow-step-key"><strong>Rules + Audit:</strong> change rules anytime; log captures every change with admin signature.</div>
+          
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/points</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-points.html" loading="lazy" title="Configure point rules."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-info">
+          <div class="flow-step-num">07</div>
+          <div class="flow-step-title">Curate the <em>reward catalogue.</em></div>
+          <p class="flow-step-desc">Add, edit, archive merchandise. Set point cost, manage stock, upload images. See popularity and adjust supply.</p>
+          <div class="flow-step-key"><strong>Per reward:</strong> name, image, point cost, stock, total redeemed, status.</div>
+          
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/rewards</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-rewards.html" loading="lazy" title="Curate the reward catalogue."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step reverse">
+        <div class="flow-step-info">
+          <div class="flow-step-num">08</div>
+          <div class="flow-step-title">Monitor <em>redemptions.</em></div>
+          <p class="flow-step-desc">See pending redemptions at the booth. Confirm them as redeemed. Track expired/cancelled redemptions. Booth staff use this view to confirm reward handover.</p>
+          <div class="flow-step-key"><strong>States:</strong> reserved → redeemed → or expired / cancelled. Every redemption traceable.</div>
+          
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/redemptions</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-redemptions.html" loading="lazy" title="Monitor redemptions."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-info">
+          <div class="flow-step-num">09</div>
+          <div class="flow-step-title">Manage <em>events &amp; actions.</em></div>
+          <p class="flow-step-desc">Schedule events, define points per check-in, generate check-in codes. See participant counts in real-time during events.</p>
+          <div class="flow-step-key"><strong>Each event has a QR code</strong> for staff to record member attendance.</div>
+          
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/events</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-events.html" loading="lazy" title="Manage events &amp; actions."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step reverse">
+        <div class="flow-step-info">
+          <div class="flow-step-num">10</div>
+          <div class="flow-step-title">Export <em>reports.</em></div>
+          <p class="flow-step-desc">Bulk export filtered data for offline analysis or sharing with Arta-Graha Group. Six report buckets: members, transactions, merchants, settlements, redemptions, points audit, events.</p>
+          <div class="flow-step-key"><strong>Filters apply globally:</strong> date range, event, merchant, country, format (CSV / Excel / PDF).</div>
+          <div class="flow-step-actions"><a href="admin-reports.html" class="flow-link primary" target="_blank" rel="noopener">Open Reports <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/reports</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-reports.html" loading="lazy" title="Export reports."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-info">
+          <div class="flow-step-num">11</div>
+          <div class="flow-step-title">Manage <em>admin roles.</em></div>
+          <p class="flow-step-desc">4 role tiers: Super Admin (full access), Finance/Settlement (transactions + reports), Redemption Staff (redemptions + scanner only), Merchant/Booth Staff (tenant view only).</p>
+          <div class="flow-step-key"><strong>Least-privilege:</strong> each role sees only what they need. Audit log captures every admin action.</div>
+          
+        </div>
+        <div>
+          <div class="flow-screen-frame">
+            <div class="flow-screen-chrome">
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-dot"></span>
+              <span class="flow-screen-url">discoverykutafestival.id/admin/roles</span>
+            </div>
+            <div class="flow-screen-iframe-wrap">
+              <iframe class="flow-screen-iframe tall" src="admin-roles.html" loading="lazy" title="Manage admin roles."></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+<section class="flow-summary">
+  <div class="flow-summary-inner">
+    <div>
+      <div class="flow-eyebrow">End of Admin Flow</div>
+      <h2 class="flow-summary-heading">Operational <em>command center.</em></h2>
+      <p class="flow-summary-text">Discovery Mall sits at the center of every payment flow. The admin console gives full visibility into transactions, settlements, members, merchants, and points — with role-based access for finance, operations, and Arta-Graha Group reporting.</p>
+    </div>
+    <div class="flow-summary-next">
+      <div class="flow-summary-next-label">Continue exploring</div>
+      <a href="flow-member.html" class="flow-next-link"><div class="flow-next-link-text">Member <em>flow</em></div><div class="flow-next-link-arrow">→</div></a>
+      <a href="flow-merchant.html" class="flow-next-link"><div class="flow-next-link-text">Merchant <em>flow</em></div><div class="flow-next-link-arrow">→</div></a>
+    </div>
+  </div>
+</section>
+<div class="flow-footer">Discovery Kuta Festival · Prototype Walkthrough · v0.7</div>
+</body>
+</html>

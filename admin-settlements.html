@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Settlements — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points &amp; Rewards</div>
+    <a href="admin-points.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+  <div class="main-area">
+    <div class="main-head">
+      <div class="main-title">
+        <em>Settlement to Merchants</em>
+        Daily payouts to UMKM
+      </div>
+      <div class="main-actions">
+        <button class="btn-sm primary">Run Payout Now</button>
+        <button class="btn-sm">Export</button>
+      </div>
+    </div>
+
+    <!-- Overview KPIs -->
+    <div class="kpi-grid" style="margin-bottom:32px;">
+      <div class="kpi">
+        <div class="kpi-label">Pending Today</div>
+        <div class="kpi-value">Rp 38M</div>
+        <div class="kpi-delta">across 142 merchants</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Settled This Week</div>
+        <div class="kpi-value">Rp 218M</div>
+        <div class="kpi-delta">7 batches</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total Festival</div>
+        <div class="kpi-value">Rp 2.4B</div>
+        <div class="kpi-delta">since 01 Aug</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Gateway Fees</div>
+        <div class="kpi-value">Rp 18M</div>
+        <div class="kpi-delta">0.75% avg MDR</div>
+      </div>
+    </div>
+
+    <!-- Settlement settings card -->
+    <div class="settlement-card" style="margin-bottom: 32px;">
+      <div class="settlement-eyebrow">Payout Configuration</div>
+      <div class="settlement-grid">
+        <div>
+          <div class="settlement-main-value">Daily<em> · 09:00 WITA</em></div>
+          <div class="settlement-main-label">Automatic settlement runs every morning · funds reach merchant accounts within 1-2 hours</div>
+        </div>
+        <div>
+          <div class="settlement-side-label">Min Payout</div>
+          <div class="settlement-side-value">Rp 50K</div>
+        </div>
+        <div>
+          <div class="settlement-side-label">Fee Model</div>
+          <div class="settlement-side-value">Net of MDR</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <input type="search" class="filter-input" placeholder="Search merchant, batch ID..." />
+      <select class="filter-select">
+        <option>All Status</option><option>Pending</option><option>Processing</option><option>Settled</option><option>Failed</option>
+      </select>
+      <select class="filter-select">
+        <option>All Banks</option><option>BCA</option><option>Mandiri</option><option>BNI</option><option>BRI</option>
+      </select>
+      <select class="filter-select">
+        <option>Today</option><option>Yesterday</option><option>This week</option><option>This month</option>
+      </select>
+      <button class="btn-sm primary" style="margin-left:auto;">Process Pending</button>
+    </div>
+
+    <!-- Settlement table -->
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr>
+          <th>Batch ID</th><th>Merchant</th><th>Bank Account</th>
+          <th>Transactions</th><th>Gross</th><th>MDR Fee</th><th>Net Payout</th><th>Status</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td class="cell-mono">STL-2026-05-19-001</td>
+            <td><div class="cell-name">Warung Ibu Made</div><div class="cell-meta">B-14 · F&amp;B</div></td>
+            <td class="cell-mono">BCA · 8421-447-1290</td>
+            <td>48</td><td>Rp 4,184,000</td><td class="cell-mono" style="color: var(--rose);">Rp 31,380</td>
+            <td><strong style="font-family:var(--display); font-size:16px; color:var(--emerald-deep);">Rp 4,152,620</strong></td>
+            <td><span class="badge warn">pending</span></td>
+          </tr>
+          <tr>
+            <td class="cell-mono">STL-2026-05-19-002</td>
+            <td><div class="cell-name">Sari Bali Batik</div><div class="cell-meta">C-22 · Fashion</div></td>
+            <td class="cell-mono">Mandiri · 1820-3829-440</td>
+            <td>22</td><td>Rp 3,124,000</td><td class="cell-mono" style="color: var(--rose);">Rp 23,430</td>
+            <td><strong style="font-family:var(--display); font-size:16px; color:var(--emerald-deep);">Rp 3,100,570</strong></td>
+            <td><span class="badge warn">pending</span></td>
+          </tr>
+          <tr>
+            <td class="cell-mono">STL-2026-05-19-003</td>
+            <td><div class="cell-name">Bali Artisan Coffee</div><div class="cell-meta">A-08 · Beverages</div></td>
+            <td class="cell-mono">BNI · 7164-2098-15</td>
+            <td>78</td><td>Rp 2,889,000</td><td class="cell-mono" style="color: var(--rose);">Rp 21,668</td>
+            <td><strong style="font-family:var(--display); font-size:16px; color:var(--emerald-deep);">Rp 2,867,332</strong></td>
+            <td><span class="badge warn">pending</span></td>
+          </tr>
+          <tr>
+            <td class="cell-mono">STL-2026-05-18-088</td>
+            <td><div class="cell-name">Pasar Senggol</div><div class="cell-meta">D-01 · Marketplace</div></td>
+            <td class="cell-mono">BCA · 2945-1782-23</td>
+            <td>34</td><td>Rp 2,240,000</td><td class="cell-mono" style="color: var(--rose);">Rp 16,800</td>
+            <td><strong style="font-family:var(--display); font-size:16px; color:var(--emerald-deep);">Rp 2,223,200</strong></td>
+            <td><span class="badge success">settled</span></td>
+          </tr>
+          <tr>
+            <td class="cell-mono">STL-2026-05-18-087</td>
+            <td><div class="cell-name">Ubud Crafts Co.</div><div class="cell-meta">C-11 · Handcraft</div></td>
+            <td class="cell-mono">BRI · 6027-4118-90</td>
+            <td>16</td><td>Rp 1,870,000</td><td class="cell-mono" style="color: var(--rose);">Rp 14,025</td>
+            <td><strong style="font-family:var(--display); font-size:16px; color:var(--emerald-deep);">Rp 1,855,975</strong></td>
+            <td><span class="badge success">settled</span></td>
+          </tr>
+          <tr>
+            <td class="cell-mono">STL-2026-05-18-086</td>
+            <td><div class="cell-name">Nasi Ayam Pak Eko</div><div class="cell-meta">B-19 · F&amp;B</div></td>
+            <td class="cell-mono">Mandiri · 4815-3300-22</td>
+            <td>52</td><td>Rp 1,620,000</td><td class="cell-mono" style="color: var(--rose);">Rp 12,150</td>
+            <td><strong style="font-family:var(--display); font-size:16px; color:var(--emerald-deep);">Rp 1,607,850</strong></td>
+            <td><span class="badge success">settled</span></td>
+          </tr>
+          <tr>
+            <td class="cell-mono">STL-2026-05-18-085</td>
+            <td><div class="cell-name">Sound of Bali</div><div class="cell-meta">A-15 · Music</div></td>
+            <td class="cell-mono">BCA · 9382-1547-30</td>
+            <td>8</td><td>Rp 1,240,000</td><td class="cell-mono" style="color: var(--rose);">Rp 9,300</td>
+            <td><strong style="font-family:var(--display); font-size:16px; color:var(--emerald-deep);">Rp 1,230,700</strong></td>
+            <td><span class="badge danger">failed</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-foot">
+        <div>Showing 1–7 of 1,284 settlements</div>
+        <div class="table-foot-actions">
+          <button class="page-btn">‹</button><button class="page-btn active">1</button>
+          <button class="page-btn">2</button><button class="page-btn">3</button>
+          <button class="page-btn">›</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

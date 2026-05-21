@@ -1,0 +1,448 @@
+/* ==========================================
+   FLOW WALKTHROUGH STYLES (per role)
+   ========================================== */
+
+:root {
+  --emerald-deep: #0b3a2e;
+  --emerald: #14533f;
+  --emerald-light: #1f6b53;
+  --gold: #c9a961;
+  --gold-light: #e0c989;
+  --gold-soft: #f5ecd5;
+  --ivory: #f8f4ec;
+  --cream: #f0e9d8;
+  --charcoal: #1a1a1a;
+  --muted: #6b6358;
+  --line: #d9cfb8;
+  --white: #ffffff;
+  --rose: #a85b3a;
+  --display: 'Cormorant Garamond', serif;
+  --body: 'Outfit', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; }
+body {
+  font-family: var(--body);
+  color: var(--charcoal);
+  background: var(--ivory);
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Top Nav (links between 3 flow files) ===== */
+.flow-topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(248, 244, 236, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.flow-brand {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  color: var(--emerald-deep);
+  text-decoration: none;
+}
+.flow-brand i { font-style: italic; color: var(--gold); font-weight: 400; }
+.flow-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--cream);
+  border-radius: 100px;
+  padding: 4px;
+  border: 1px solid var(--line);
+}
+.flow-tabs a {
+  text-decoration: none;
+  padding: 8px 18px;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+.flow-tabs a:hover { color: var(--emerald-deep); }
+.flow-tabs a.active {
+  background: var(--emerald-deep);
+  color: var(--gold-light);
+}
+.flow-meta {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ===== Hero / Header ===== */
+.flow-hero {
+  padding: 120px 40px 60px;
+  background:
+    radial-gradient(ellipse at top right, rgba(201, 169, 97, 0.15), transparent 50%),
+    linear-gradient(180deg, var(--emerald-deep) 0%, var(--emerald) 100%);
+  color: var(--ivory);
+  position: relative;
+  overflow: hidden;
+}
+.flow-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0, transparent 80px, rgba(201, 169, 97, 0.03) 80px, rgba(201, 169, 97, 0.03) 81px);
+  pointer-events: none;
+}
+.flow-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: end;
+  position: relative;
+}
+.flow-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 24px;
+}
+.flow-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.flow-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+.flow-title em { font-style: italic; color: var(--gold-light); font-weight: 300; }
+.flow-subtitle {
+  font-size: 16px;
+  color: rgba(248, 244, 236, 0.75);
+  line-height: 1.7;
+  max-width: 540px;
+}
+.flow-hero-stats {
+  display: grid;
+  gap: 16px;
+}
+.flow-stat {
+  border-left: 1px solid rgba(201, 169, 97, 0.4);
+  padding-left: 20px;
+}
+.flow-stat-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 42px;
+  color: var(--gold);
+  line-height: 1;
+}
+.flow-stat-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(248, 244, 236, 0.65);
+  margin-top: 4px;
+}
+
+/* ===== Steps wrapper ===== */
+.flow-steps {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 40px 120px;
+}
+
+/* Step row: title side + screen side */
+.flow-step {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  align-items: start;
+  position: relative;
+}
+.flow-step.reverse {
+  grid-template-columns: 1fr 380px;
+}
+.flow-step-info {
+  position: sticky;
+  top: 110px;
+  padding-top: 20px;
+}
+.flow-step-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.flow-step-num::before {
+  content: 'Step ';
+}
+.flow-step-title {
+  font-family: var(--display);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--emerald-deep);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.flow-step-title em { font-style: italic; color: var(--gold); }
+.flow-step-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.flow-step-key {
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--emerald-deep);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.flow-step-key strong { font-weight: 500; }
+.flow-step-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.flow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--emerald-deep);
+  border: 1px solid var(--line);
+  background: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.flow-link:hover { border-color: var(--gold); }
+.flow-link.primary {
+  background: var(--emerald-deep);
+  color: var(--gold-light);
+  border-color: var(--emerald-deep);
+}
+.flow-link.primary:hover { background: var(--charcoal); }
+.flow-link svg { width: 12px; height: 12px; }
+
+/* ===== Screen mockup ===== */
+.flow-screen-frame {
+  background: var(--charcoal);
+  padding: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 80px rgba(11, 58, 46, 0.18);
+  position: relative;
+}
+.flow-screen-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 12px;
+}
+.flow-screen-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(201, 169, 97, 0.35);
+}
+.flow-screen-dot:first-child { background: rgba(168, 91, 58, 0.7); }
+.flow-screen-dot:nth-child(2) { background: rgba(201, 169, 97, 0.7); }
+.flow-screen-dot:nth-child(3) { background: rgba(31, 107, 83, 0.7); }
+.flow-screen-url {
+  margin-left: 16px;
+  font-size: 11px;
+  color: rgba(248, 244, 236, 0.6);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+.flow-screen-iframe-wrap {
+  position: relative;
+  width: 100%;
+  background: var(--ivory);
+  overflow: hidden;
+}
+.flow-screen-iframe {
+  width: 100%;
+  height: 700px;
+  border: 0;
+  display: block;
+  background: var(--ivory);
+}
+/* Some pages need taller frames (member dashboard, admin) */
+.flow-screen-iframe.tall { height: 900px; }
+.flow-screen-iframe.short { height: 560px; }
+
+/* Optional "annotation" pin on screen */
+.flow-screen-annotate {
+  position: absolute;
+  background: var(--gold);
+  color: var(--emerald-deep);
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  padding: 8px 14px;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(11, 58, 46, 0.25);
+  z-index: 2;
+}
+.flow-screen-annotate::after {
+  content: '';
+  position: absolute;
+  border: 6px solid transparent;
+}
+.flow-screen-annotate.top-left { top: 30px; left: 30px; }
+.flow-screen-annotate.top-right { top: 30px; right: 30px; }
+
+/* ===== Connector line between steps ===== */
+.flow-step::after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  bottom: -80px;
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.flow-step:last-child::after { display: none; }
+
+/* ===== Closing CTA / Summary ===== */
+.flow-summary {
+  background: var(--emerald-deep);
+  color: var(--ivory);
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.flow-summary::before {
+  content: '';
+  position: absolute;
+  bottom: -100px; right: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 169, 97, 0.18), transparent 70%);
+}
+.flow-summary-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+.flow-summary-heading {
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.flow-summary-heading em { font-style: italic; color: var(--gold-light); }
+.flow-summary-text {
+  font-size: 15px;
+  color: rgba(248, 244, 236, 0.7);
+  line-height: 1.7;
+}
+.flow-summary-next {
+  display: grid;
+  gap: 14px;
+  border-left: 1px solid rgba(201, 169, 97, 0.3);
+  padding-left: 32px;
+}
+.flow-summary-next-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+.flow-next-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: rgba(248, 244, 236, 0.06);
+  border: 1px solid rgba(201, 169, 97, 0.2);
+  color: var(--ivory);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.flow-next-link:hover {
+  background: rgba(248, 244, 236, 0.1);
+  border-color: var(--gold);
+}
+.flow-next-link-text {
+  font-family: var(--display);
+  font-size: 22px;
+}
+.flow-next-link-text em { font-style: italic; color: var(--gold-light); }
+.flow-next-link-arrow { font-size: 20px; color: var(--gold); }
+
+/* ===== Footer note ===== */
+.flow-footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .flow-step, .flow-step.reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .flow-step-info {
+    position: static;
+    padding-top: 0;
+  }
+  .flow-hero-inner, .flow-summary-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .flow-step::after { display: none; }
+}
+@media (max-width: 720px) {
+  .flow-topbar { padding: 14px 16px; flex-wrap: wrap; gap: 12px; }
+  .flow-tabs { flex-wrap: wrap; }
+  .flow-tabs a { padding: 6px 12px; font-size: 10px; }
+  .flow-hero, .flow-steps, .flow-summary { padding-left: 20px; padding-right: 20px; }
+  .flow-hero { padding-top: 100px; padding-bottom: 40px; }
+  .flow-step-title { font-size: 28px; }
+  .flow-screen-iframe { height: 540px; }
+  .flow-screen-iframe.tall { height: 720px; }
+  .flow-screen-iframe.short { height: 460px; }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Festival Microsite — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="active">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+
+<main class="page-wrap">
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">01 Aug 2026 — 05 Jan 2027 · Kuta, Bali</div>
+      <h1 class="display">A festival of <em>discovery</em>, reimagined for the curious.</h1>
+      <p class="hero-sub">Show your Festival Pass at any merchant. Pay through the microsite. Earn points on every transaction, event, and action. Redeem for curated merchandise. One QR — your identity at the festival.</p>
+      <div class="hero-actions">
+        <a href="signup.html" class="btn btn-primary">Become a Member <span class="btn-arrow">→</span></a>
+        <a href="member.html" class="btn btn-ghost">Preview Dashboard</a>
+      </div>
+    </div>
+    <div class="qr-showcase">
+      <div class="qr-card">
+        <div class="float-tag top">Your Festival Pass</div>
+        <div class="float-tag bot">Show, pay, earn — instantly</div>
+        <div class="qr-card-top">
+          <div>
+            <div class="qr-card-label">Member ID</div>
+            <div class="qr-card-title">DKF · 2026</div>
+          </div>
+          <div class="qr-card-badge">no. 04827</div>
+        </div>
+        <div class="qr-visual" id="qrVisual"></div>
+        <div class="qr-card-foot">Show this at redeem booth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">10<em>K</em></div>
+      <div class="stat-label">Daily Visitors Targeted</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">157</div>
+      <div class="stat-label">Days of Festival</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">200<em>+</em></div>
+      <div class="stat-label">UMKM Tenants</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><em>∞</em></div>
+      <div class="stat-label">Moments Curated</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2 class="display">How it <em>unfolds</em></h2>
+    <p class="section-desc">Customers carry one QR — their Festival Pass. Merchants never scan, never log in. A daily code bridges the two: payment flows through the microsite, points credit automatically, every transaction tracked.</p>
+  </div>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-num">i.</div>
+      <div class="feature-title">Sign up &amp; receive your Pass</div>
+      <div class="feature-body">Register with Google or email. Your personal Festival Pass — a unique QR with your name and ID — is generated instantly.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-num">ii.</div>
+      <div class="feature-title">Show your Pass at merchants</div>
+      <div class="feature-body">Visit any UMKM stand and present your Festival Pass. The merchant verifies it visually — no scanning, no apps, no logins on their side.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-num">iii.</div>
+      <div class="feature-title">Pay through the microsite</div>
+      <div class="feature-body">The merchant gives you a daily code (e.g., "ICE20"). Enter the amount + code in the microsite, pay via QRIS or e-wallet, and points are credited automatically.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-num">iv.</div>
+      <div class="feature-title">Check in at festival events</div>
+      <div class="feature-body">At event entrances, festival staff scan your Pass to log attendance and award bonus points — Sunset sessions, workshops, daily check-ins.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-num">v.</div>
+      <div class="feature-title">Redeem at the booth</div>
+      <div class="feature-body">Choose from a curated merchandise catalogue. At the redemption booth, staff scan your Pass to verify and complete the redemption.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-num">vi.</div>
+      <div class="feature-title">Carry it forward</div>
+      <div class="feature-body">When the festival ends, your membership transitions — into the broader Discovery Mall loyalty universe.</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="venue-section">
+  <div class="venue-inner">
+    <div class="venue-head">
+      <div>
+        <div class="eyebrow" style="color: var(--gold); margin-bottom: 14px;">Festival Venue · Kuta Beach</div>
+        <h2>Find your way through the <em>festival.</em></h2>
+      </div>
+      <div class="venue-head-desc">A full layout of the festival grounds — zones, stages, and merchant areas all in one view.</div>
+    </div>
+
+    <div class="venue-image-wrap">
+      <div class="venue-image-viewport" id="venueViewport">
+        <img src="venue-map.jpg" alt="Discovery Kuta Festival Venue Map" class="venue-image-static" id="venueImage" />
+      </div>
+      <div class="venue-zoom-controls">
+        <button class="venue-zoom-btn" id="venueZoomIn" aria-label="Zoom in" title="Zoom in">+</button>
+        <button class="venue-zoom-btn" id="venueZoomOut" aria-label="Zoom out" title="Zoom out">−</button>
+        <button class="venue-zoom-btn reset" id="venueZoomReset" aria-label="Reset zoom" title="Reset">FIT</button>
+      </div>
+      <div class="venue-zoom-level" id="venueZoomLevel">100%</div>
+      <div class="venue-zoom-hint" id="venueZoomHint"><strong>Scroll</strong> to zoom · <strong>Drag</strong> to pan</div>
+    </div>
+  </div>
+</section>
+<section class="timeline-strip">
+  <div class="timeline-inner">
+    <div class="timeline-label">Timeline,<br/>at a glance.</div>
+    <div class="timeline-dates">
+      <div class="td-item">
+        <div class="td-label">Opens</div>
+        <div class="td-value">01 Aug 2026</div>
+      </div>
+      <div class="td-item">
+        <div class="td-label">Closes</div>
+        <div class="td-value">05 Jan 2027</div>
+      </div>
+      <div class="td-item">
+        <div class="td-label">Platform Go-Live</div>
+        <div class="td-value">Mid-July 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="scripts.js"></script>
+</body>
+</html>

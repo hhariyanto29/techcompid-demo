@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Reports — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points & Rewards</div>
+    <a href="admin-points.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+
+  <div class="main-area">
+
+    <div class="main-head">
+      <div class="main-title">
+        <em>Reports / Export</em>
+        Download data snapshots for offline analysis
+      </div>
+      <div class="main-actions">
+        
+      </div>
+    </div>
+
+    <div class="form-panel">
+      <div class="form-panel-title">Filter &amp; Export</div>
+      <div class="form-panel-sub">Apply filters across all report types before downloading.</div>
+      <div class="form-grid-3">
+        <div class="field-block">
+          <label>Date Range</label>
+          <select><option>Today</option><option>Yesterday</option><option>This week</option><option>This month</option><option>Last 30 days</option><option>Festival to date</option><option>Custom range</option></select>
+        </div>
+        <div class="field-block">
+          <label>Event / Activity</label>
+          <select><option>All events</option><option>Sunset Music Session</option><option>Game Booth Challenge</option><option>Cooking Workshop</option></select>
+        </div>
+        <div class="field-block">
+          <label>Merchant</label>
+          <select><option>All merchants</option><option>Warung Ibu Made</option><option>Sari Bali Batik</option><option>Bali Artisan Coffee</option></select>
+        </div>
+        <div class="field-block">
+          <label>Country</label>
+          <select><option>All countries</option><option>Indonesia</option><option>Singapore</option><option>Australia</option><option>Malaysia</option></select>
+        </div>
+        <div class="field-block">
+          <label>Member Status</label>
+          <select><option>All status</option><option>Active</option><option>Pending</option><option>Inactive</option></select>
+        </div>
+        <div class="field-block">
+          <label>Format</label>
+          <select><option>CSV</option><option>Excel (.xlsx)</option><option>PDF (summary)</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top:24px;">
+
+      <div class="form-panel" style="margin:0;">
+        <div class="form-panel-title" style="margin-bottom:4px;">Member Database</div>
+        <div class="form-panel-sub" style="margin-bottom:20px;">All registered members with full demographic + activity summary.</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:16px;">Includes: Name, Email, WhatsApp, Country, Registered Date, Total Points, Total Spending, Transactions, Status</div>
+        <button class="btn-sm primary" style="width:100%;">Export Member Report</button>
+      </div>
+
+      <div class="form-panel" style="margin:0;">
+        <div class="form-panel-title" style="margin-bottom:4px;">Transaction Report</div>
+        <div class="form-panel-sub" style="margin-bottom:20px;">All transactions with payment status and point credit details.</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:16px;">Includes: TXN ID, Member, Merchant, Amount, Payment Method, Status, Points, Timestamp</div>
+        <button class="btn-sm primary" style="width:100%;">Export Transaction Report</button>
+      </div>
+
+      <div class="form-panel" style="margin:0;">
+        <div class="form-panel-title" style="margin-bottom:4px;">Merchant Performance</div>
+        <div class="form-panel-sub" style="margin-bottom:20px;">Per-merchant revenue, transaction count, and settlement status.</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:16px;">Includes: Merchant, Category, Booth, Total Transactions, Revenue, Avg. Spending, Settlement</div>
+        <button class="btn-sm primary" style="width:100%;">Export Merchant Report</button>
+      </div>
+
+      <div class="form-panel" style="margin:0;">
+        <div class="form-panel-title" style="margin-bottom:4px;">Redemption Report</div>
+        <div class="form-panel-sub" style="margin-bottom:20px;">All reward redemptions with status tracking.</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:16px;">Includes: Redeem Code, Member, Reward, Status, Time, Booth, Confirmed By</div>
+        <button class="btn-sm primary" style="width:100%;">Export Redemption Report</button>
+      </div>
+
+      <div class="form-panel" style="margin:0;">
+        <div class="form-panel-title" style="margin-bottom:4px;">Points Audit Log</div>
+        <div class="form-panel-sub" style="margin-bottom:20px;">Full point history including manual adjustments.</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:16px;">Includes: Time, Member, Source, Change, Balance, Reference, Adjusted By</div>
+        <button class="btn-sm primary" style="width:100%;">Export Points Log</button>
+      </div>
+
+      <div class="form-panel" style="margin:0;">
+        <div class="form-panel-title" style="margin-bottom:4px;">Event Attendance</div>
+        <div class="form-panel-sub" style="margin-bottom:20px;">Per-event check-in records and participant counts.</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:16px;">Includes: Event, Member, Check-in Time, Points Awarded, Code Used</div>
+        <button class="btn-sm primary" style="width:100%;">Export Event Report</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

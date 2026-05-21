@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Member Dashboard — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="active">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+
+<main class="page-wrap">
+
+<section class="dash">
+  <div class="dash-head">
+    <div>
+      <div class="greet-eyebrow">Member Dashboard · 19 May 2026</div>
+      <div class="greet">Welcome back, <em>Anastasia.</em></div>
+    </div>
+    <div class="dash-meta">
+      <div class="id">DKF · 04827</div>
+      <div class="name">Anastasia Wijaya</div>
+    </div>
+  </div>
+
+  <!-- Personal QR strip -->
+  <div class="my-qr-strip">
+    <div class="my-qr-strip-text">
+      <div class="my-qr-eyebrow">Your Festival Pass</div>
+      <div class="my-qr-title">Member Pass. <em>Scan. Pay. Earn.</em></div>
+      <div class="my-qr-sub">Show this QR to any festival merchant. They scan it from their POS, send a payment request to your phone, and you complete the payment. Points credit automatically.</div>
+    </div>
+    <div class="my-qr-mini" id="myQrMini"></div>
+    <button class="showqr-cta" id="openQrBtn">
+      <div class="showqr-cta-icon">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <div class="showqr-cta-label">Show My QR</div>
+      <div class="showqr-cta-sub">enlarge for scan</div>
+    </button>
+    <button class="payreq-cta" id="openPayReqBtn">
+      <div class="payreq-cta-icon">⤓</div>
+      <div class="payreq-cta-label">Demo: Payment Req</div>
+      <div class="payreq-cta-sub">simulate merchant scan</div>
+    </button>
+  </div>
+
+  <div class="dash-grid">
+    <div class="dash-card feature-card">
+      <div class="dc-label">Current Balance</div>
+      <div class="dc-value">2,840<em>pts</em></div>
+      <div class="dc-trend">+340 pts this week</div>
+    </div>
+    <div class="dash-card">
+      <div class="dc-label">Total Spending</div>
+      <div class="dc-value">Rp 1.84M</div>
+      <div class="dc-trend up">↑ 12% vs last month</div>
+    </div>
+    <div class="dash-card">
+      <div class="dc-label">Merchants Visited</div>
+      <div class="dc-value">18</div>
+      <div class="dc-trend">across festival</div>
+    </div>
+  </div>
+  <div class="dash-cols">
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Recent Activity</div>
+        <a class="panel-link">View all →</a>
+      </div>
+
+      <div class="activity-row">
+        <div class="activity-icon">↗</div>
+        <div>
+          <div class="ar-merchant">Warung Ibu Made</div>
+          <div class="ar-meta">Payment · Rp 85,000 · code ICE20 · 19 May, 14:32</div>
+        </div>
+        <div class="ar-pts">+ 8 pts</div>
+      </div>
+
+      <div class="activity-row">
+        <div class="activity-icon event">★</div>
+        <div>
+          <div class="ar-merchant">Sunset Music Session — Attended</div>
+          <div class="ar-meta">Event check-in · 17 May, 18:00</div>
+        </div>
+        <div class="ar-pts">+ 50 pts</div>
+      </div>
+
+      <div class="activity-row">
+        <div class="activity-icon redeem">↘</div>
+        <div>
+          <div class="ar-merchant">Festival Tote — Redeemed</div>
+          <div class="ar-meta">Redemption booth · 16 May</div>
+        </div>
+        <div class="ar-pts minus">− 150 pts</div>
+      </div>
+
+      <div class="activity-row">
+        <div class="activity-icon">↗</div>
+        <div>
+          <div class="ar-merchant">Bali Artisan Coffee</div>
+          <div class="ar-meta">Payment · Rp 42,000 · code BAC15 · 16 May, 10:14</div>
+        </div>
+        <div class="ar-pts">+ 4 pts</div>
+      </div>
+
+      <div class="activity-row">
+        <div class="activity-icon">↗</div>
+        <div>
+          <div class="ar-merchant">Sari Bali Batik</div>
+          <div class="ar-meta">Payment · Rp 220,000 · code SBB07 · 15 May, 16:48</div>
+        </div>
+        <div class="ar-pts">+ 22 pts</div>
+      </div>
+
+      <div class="activity-row">
+        <div class="activity-icon event">★</div>
+        <div>
+          <div class="ar-merchant">Festival Entry — Daily check-in</div>
+          <div class="ar-meta">Entry gate · 15 May, 16:30</div>
+        </div>
+        <div class="ar-pts">+ 5 pts</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">Redeem Catalogue</div>
+        <a class="panel-link">All items →</a>
+      </div>
+      <div class="merch-grid">
+        <div class="merch">
+          <div class="merch-img tote"></div>
+          <div class="merch-name">Festival Tote</div>
+          <div class="merch-pts">50 pts</div>
+        </div>
+        <div class="merch">
+          <div class="merch-img bottle"></div>
+          <div class="merch-name">Tumbler Edition</div>
+          <div class="merch-pts">120 pts</div>
+        </div>
+        <div class="merch">
+          <div class="merch-img cap"></div>
+          <div class="merch-name">Discovery Cap</div>
+          <div class="merch-pts">180 pts</div>
+        </div>
+        <div class="merch">
+          <div class="merch-img bag"></div>
+          <div class="merch-name">Linen Pouch</div>
+          <div class="merch-pts">240 pts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="venue-section compact">
+  <div class="venue-inner">
+    <div class="venue-head">
+      <div>
+        <div class="eyebrow" style="color: var(--gold); margin-bottom: 14px;">Festival Venue · Kuta Beach</div>
+        <h2>Festival <em>map.</em></h2>
+      </div>
+      <div class="venue-head-desc">Plan your visit. Find merchants near you, locate event stages, discover the zones.</div>
+    </div>
+
+    <div class="venue-image-wrap">
+      <div class="venue-image-viewport" id="venueViewport">
+        <img src="venue-map.jpg" alt="Discovery Kuta Festival Venue Map" class="venue-image-static" id="venueImage" />
+      </div>
+      <div class="venue-zoom-controls">
+        <button class="venue-zoom-btn" id="venueZoomIn" aria-label="Zoom in" title="Zoom in">+</button>
+        <button class="venue-zoom-btn" id="venueZoomOut" aria-label="Zoom out" title="Zoom out">−</button>
+        <button class="venue-zoom-btn reset" id="venueZoomReset" aria-label="Reset zoom" title="Reset">FIT</button>
+      </div>
+      <div class="venue-zoom-level" id="venueZoomLevel">100%</div>
+      <div class="venue-zoom-hint" id="venueZoomHint"><strong>Scroll</strong> to zoom · <strong>Drag</strong> to pan</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHOW MY QR MODAL (large QR display for merchant scan) ===== -->
+<div class="showqr-modal" id="showQrModal">
+  <div class="showqr-inner">
+    <button class="showqr-close" id="closeQrBtn" aria-label="Close">×</button>
+
+    <div class="showqr-eyebrow">Festival Pass · Active</div>
+    <h2 class="showqr-title">Show this to <em>the merchant</em></h2>
+    <p class="showqr-instruction">Hold your screen up so the merchant can scan with their POS device.</p>
+
+    <div class="showqr-frame">
+      <div class="showqr-big" id="showqrBig"></div>
+      <div class="showqr-center-logo">DKF<em>·</em>2026</div>
+    </div>
+
+    <div class="showqr-identity">
+      <div class="showqr-id-row">
+        <div class="showqr-id-label">Name</div>
+        <div class="showqr-id-value">Anastasia Wijaya</div>
+      </div>
+      <div class="showqr-divider"></div>
+      <div class="showqr-id-row">
+        <div class="showqr-id-label">Member ID</div>
+        <div class="showqr-id-value mono">DKF · 04827</div>
+      </div>
+      <div class="showqr-divider"></div>
+      <div class="showqr-id-row">
+        <div class="showqr-id-label">Tier</div>
+        <div class="showqr-id-value">Bronze</div>
+      </div>
+    </div>
+
+    <div class="showqr-hint">Screen brightness auto-maximized</div>
+    <div class="showqr-brightness">For best scanning</div>
+  </div>
+</div>
+
+<!-- ===== PAYMENT REQUEST MODAL (passive Starbucks-style) ===== -->
+<div class="payreq-modal" id="payReqModal">
+  <div class="payreq-inner">
+    <button class="payreq-close" id="closePayReqBtn" aria-label="Close">×</button>
+
+    <!-- VIEW 1: Incoming payment request -->
+    <div class="payreq-step-view active" id="payreqStep1">
+      <div class="payreq-incoming-badge">Incoming Payment Request</div>
+
+      <div class="payreq-title">Pay <em>Warung Ibu Made</em></div>
+      <div class="payreq-merchant">Stand B-14 · Food Court · Scanned just now</div>
+
+      <div class="payreq-amount-card">
+        <div class="payreq-amount-label">Total Amount</div>
+        <div class="payreq-amount-value">Rp 85,000</div>
+        <div class="payreq-pts-info" id="payreqPtsInfo">+ 16 pts (2× with Artha Graha)</div>
+      </div>
+
+      <!-- Artha Graha Banking — featured, with bonus -->
+      <div class="payreq-bank-section">
+        <div class="payreq-bank-header">
+          <div class="payreq-bank-title-wrap">
+            <div class="payreq-bank-icon">A</div>
+            <div class="payreq-bank-title">Bank <em>Artha Graha</em><br/><span style="font-size: 11px; color: var(--muted); letter-spacing: 0.05em;">Festival Banking Partner</span></div>
+          </div>
+          <div class="payreq-bank-badge">0% fee · 2× pts</div>
+        </div>
+        <div class="payreq-bank-methods">
+          <div class="payreq-bank-method selected" data-method="AG-Mobile">
+            <div class="payreq-bank-method-icon">◐</div>
+            <div class="payreq-bank-method-name">AG Mobile</div>
+            <div class="payreq-bank-method-sub">in-app pay</div>
+          </div>
+          <div class="payreq-bank-method" data-method="AG-VA">
+            <div class="payreq-bank-method-icon">∥</div>
+            <div class="payreq-bank-method-name">Virtual Account</div>
+            <div class="payreq-bank-method-sub">transfer</div>
+          </div>
+          <div class="payreq-bank-method" data-method="AG-Card">
+            <div class="payreq-bank-method-icon">▢</div>
+            <div class="payreq-bank-method-name">AG Card</div>
+            <div class="payreq-bank-method-sub">debit/credit</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="payreq-other-label">Other payment methods</div>
+      <div class="payreq-methods">
+        <div class="payreq-method" data-method="QRIS">
+          <div class="payreq-method-icon">▦</div>
+          <div class="payreq-method-name">QRIS</div>
+          <div class="payreq-method-sub">any bank/wallet</div>
+        </div>
+        <div class="payreq-method" data-method="GoPay">
+          <div class="payreq-method-icon">◇</div>
+          <div class="payreq-method-name">GoPay</div>
+          <div class="payreq-method-sub">balance Rp 240K</div>
+        </div>
+        <div class="payreq-method" data-method="OVO">
+          <div class="payreq-method-icon">○</div>
+          <div class="payreq-method-name">OVO</div>
+          <div class="payreq-method-sub">balance Rp 88K</div>
+        </div>
+        <div class="payreq-method" data-method="Credit Card">
+          <div class="payreq-method-icon">▢</div>
+          <div class="payreq-method-name">Credit Card</div>
+          <div class="payreq-method-sub">•• 4821</div>
+        </div>
+      </div>
+
+      <div class="payreq-actions">
+        <button class="payreq-btn" id="payReqDecline">Decline</button>
+        <button class="payreq-btn primary" id="payReqApprove">Pay Rp 85,000</button>
+      </div>
+    </div>
+
+    <!-- VIEW 2: Success -->
+    <div class="payreq-step-view" id="payreqStep2">
+      <div class="payreq-success show">
+        <div class="payreq-success-badge">Payment Successful</div>
+        <div class="payreq-success-title">Thank you, <em>Anastasia.</em></div>
+        <div style="font-size: 13px; color: var(--muted); margin-top: 12px;">
+          Your payment of <strong style="color: var(--emerald-deep);">Rp 85,000</strong> to <strong style="color: var(--emerald-deep);">Warung Ibu Made</strong> was confirmed.
+        </div>
+        <div class="payreq-success-pts">+ 8 pts</div>
+        <div style="background: var(--cream); padding: 18px 22px; border-left: 3px solid var(--gold); text-align: left; margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; padding: 6px 0; font-size: 12px;">
+            <span style="color: var(--muted);">Transaction ID</span>
+            <span style="font-family: 'Courier New', monospace;">TXN-039428</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding: 6px 0; font-size: 12px; border-top: 1px solid rgba(217,207,184,0.6);">
+            <span style="color: var(--muted);">New balance</span>
+            <span style="font-family: var(--display); font-size: 16px; color: var(--emerald-deep);">2,848 pts</span>
+          </div>
+        </div>
+        <button class="payreq-btn primary" id="closePayReqSuccess" style="width: 100%; flex: none;">View My Activity</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script src="scripts.js"></script>
+</body>
+</html>

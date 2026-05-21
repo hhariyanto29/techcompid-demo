@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Redemptions — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="active">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+<main class="page-wrap">
+<section class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">DISCOVERY <i>Kuta</i></div>
+    <div class="sidebar-sub">Admin Console</div>
+    <div class="nav-section">Overview</div>
+    <a href="admin.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Dashboard</a>
+    <div class="nav-section">Management</div>
+    <a href="admin-members.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Members</a>
+    <a href="admin-merchants.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Merchants</a>
+    <a href="admin-transactions.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Transactions</a>
+    <a href="admin-settlements.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Settlements</a>
+    <div class="nav-section">Points & Rewards</div>
+    <a href="admin-points.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Points</a>
+    <a href="admin-rewards.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Rewards</a>
+    <a href="admin-redemptions.html" class="nav-link active" style="text-decoration:none;"><span class="nav-dot"></span> Redemptions</a>
+    <a href="admin-events.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Events / Actions</a>
+    <div class="nav-section">System</div>
+    <a href="admin-reports.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Reports / Export</a>
+    <a href="admin-roles.html" class="nav-link " style="text-decoration:none;"><span class="nav-dot"></span> Admin Roles</a>
+  </aside>
+
+  <div class="main-area">
+
+    <div class="main-head">
+      <div class="main-title">
+        <em>Redemption Dashboard</em>
+        For booth staff · 1,723 total redemptions
+      </div>
+      <div class="main-actions">
+        <button class="btn-sm"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Export</button>
+      </div>
+    </div>
+
+    <div class="kpi-grid" style="margin-bottom:32px;">
+      <div class="kpi"><div class="kpi-label">Reserved (Pending)</div><div class="kpi-value">38</div><div class="kpi-delta">awaiting pickup</div></div>
+      <div class="kpi"><div class="kpi-label">Redeemed Today</div><div class="kpi-value">126</div><div class="kpi-delta">+18 vs yesterday</div></div>
+      <div class="kpi"><div class="kpi-label">Expired</div><div class="kpi-value">42</div><div class="kpi-delta">last 30 days</div></div>
+      <div class="kpi"><div class="kpi-label">Cancelled</div><div class="kpi-value">17</div><div class="kpi-delta">last 30 days</div></div>
+    </div>
+
+    <div class="filter-bar">
+      <input type="search" class="filter-input" placeholder="Search redeem code, member..." />
+      <select class="filter-select">
+        <option>All Status</option><option>Reserved</option><option>Redeemed</option><option>Expired</option><option>Cancelled</option>
+      </select>
+      <select class="filter-select">
+        <option>All Booths</option><option>Booth A</option><option>Booth B</option>
+      </select>
+      <select class="filter-select">
+        <option>Today</option><option>This week</option><option>This month</option><option>All time</option>
+      </select>
+      <button class="btn-sm primary" style="margin-left:auto;">Open Scanner</button>
+      <button class="btn-sm">Export CSV</button>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr>
+          <th>Redeem Code</th><th>Member</th><th>Reward</th>
+          <th>Status</th><th>Time</th><th>Booth</th><th>Action</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td class="cell-mono">RDM-04827</td>
+          <td><div class="cell-name">Anastasia Wijaya</div></td>
+          <td>Festival Tote</td>
+          <td><span class="badge gold">reserved</span></td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 14:32</div></td>
+          <td>Booth A</td>
+          <td><button class="btn-sm gold" style="padding:6px 12px;">Confirm</button></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">RDM-04826</td>
+          <td><div class="cell-name">Rizky Pratama</div></td>
+          <td>Tumbler Edition</td>
+          <td><span class="badge success">redeemed</span></td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 13:48</div></td>
+          <td>Booth B</td>
+          <td><span style="color:var(--muted);font-size:12px;">—</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">RDM-04825</td>
+          <td><div class="cell-name">Mei Lin Tan</div></td>
+          <td>Discovery Cap</td>
+          <td><span class="badge success">redeemed</span></td>
+          <td><div class="cell-meta" style="margin:0;">19 May, 13:21</div></td>
+          <td>Booth A</td>
+          <td><span style="color:var(--muted);font-size:12px;">—</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">RDM-04824</td>
+          <td><div class="cell-name">David Anderson</div></td>
+          <td>Linen Pouch</td>
+          <td><span class="badge muted">expired</span></td>
+          <td><div class="cell-meta" style="margin:0;">18 May, 16:12</div></td>
+          <td>—</td>
+          <td><span style="color:var(--muted);font-size:12px;">—</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">RDM-04823</td>
+          <td><div class="cell-name">Putri Maharani</div></td>
+          <td>Festival Tote</td>
+          <td><span class="badge danger">cancelled</span></td>
+          <td><div class="cell-meta" style="margin:0;">18 May, 14:32</div></td>
+          <td>—</td>
+          <td><span style="color:var(--muted);font-size:12px;">—</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">RDM-04822</td>
+          <td><div class="cell-name">Budi Santoso</div></td>
+          <td>Premium Hamper</td>
+          <td><span class="badge success">redeemed</span></td>
+          <td><div class="cell-meta" style="margin:0;">18 May, 12:08</div></td>
+          <td>Booth A</td>
+          <td><span style="color:var(--muted);font-size:12px;">—</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">RDM-04821</td>
+          <td><div class="cell-name">Sari Dewi</div></td>
+          <td>Festival Tote</td>
+          <td><span class="badge success">redeemed</span></td>
+          <td><div class="cell-meta" style="margin:0;">18 May, 11:42</div></td>
+          <td>Booth B</td>
+          <td><span style="color:var(--muted);font-size:12px;">—</span></td>
+        </tr>
+        <tr>
+          <td class="cell-mono">RDM-04820</td>
+          <td><div class="cell-name">John Carter</div></td>
+          <td>Bali Spa Voucher</td>
+          <td><span class="badge gold">reserved</span></td>
+          <td><div class="cell-meta" style="margin:0;">18 May, 10:14</div></td>
+          <td>Booth A</td>
+          <td><button class="btn-sm gold" style="padding:6px 12px;">Confirm</button></td>
+        </tr></tbody>
+      </table>
+      <div class="table-foot">
+        <div>Showing 1–8 of 1,723</div>
+        <div class="table-foot-actions">
+          <button class="page-btn">‹</button><button class="page-btn active">1</button>
+          <button class="page-btn">2</button><button class="page-btn">3</button>
+          <button class="page-btn">›</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="scripts.js"></script>
+</body>
+</html>

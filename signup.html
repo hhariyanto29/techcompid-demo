@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign Up — Discovery Kuta Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="index.html" class="brand">DISCOVERY <i>Kuta</i> FESTIVAL</a>
+  <nav class="page-tabs">
+      <a href="index.html" class="">Landing</a>
+      <a href="signup.html" class="active">Sign Up</a>
+      <a href="member.html" class="">Member</a>
+      <a href="tenant.html" class="">Merchant</a>
+      <a href="scanner.html" class="">Staff Scanner</a>
+      <a href="admin.html" class="">Admin</a>
+  </nav>
+  <div class="top-meta">Prototype · v0.9</div>
+</header>
+
+<main class="page-wrap">
+
+<section class="signup-wrap">
+  <div class="signup-side">
+    <div class="signup-eyebrow">Festival Membership · 2026</div>
+    <h2 class="signup-heading">Begin your <em>discovery.</em></h2>
+    <p class="signup-pitch">Membership is the entry point. A single QR that travels with you across every tenant, every event, every moment of the festival.</p>
+    <ul class="signup-perks">
+      <li><span class="perk-num">i.</span> Earn points on every transaction, event check-in, and daily action</li>
+      <li><span class="perk-num">ii.</span> Redeem merchandise from a curated festival catalogue</li>
+      <li><span class="perk-num">iii.</span> Track every visit across 200+ UMKM tenants</li>
+      <li><span class="perk-num">iv.</span> Automatic transition into Discovery Mall loyalty</li>
+    </ul>
+  </div>
+  <div class="signup-form">
+    <div class="form-tabs">
+      <button class="active">Create Account</button>
+      <button>Sign In</button>
+    </div>
+    <div class="form-title">Member registration</div>
+    <div class="form-sub">All fields marked are required for festival entry.</div>
+
+    <button class="oauth-btn"><span class="g-icon"></span> Continue with Google</button>
+
+    <div class="oauth-divider">or with email</div>
+
+    <div class="field">
+      <label>Nama Lengkap <span class="req">*</span></label>
+      <input type="text" placeholder="Anastasia Wijaya" value="Anastasia Wijaya" />
+    </div>
+    <div class="field">
+      <label>Alamat Email <span class="req">*</span></label>
+      <input type="email" placeholder="you@example.com" value="anastasia.w@gmail.com" />
+    </div>
+    <div class="row2">
+      <div class="field">
+        <label>Nomor Whatsapp <span class="req">*</span></label>
+        <input type="tel" placeholder="+62 ..." value="+62 812 4567 8901" />
+      </div>
+      <div class="field">
+        <label>Country <span class="req">*</span></label>
+        <select>
+          <option>Indonesia</option>
+          <option>Singapore</option>
+          <option>Australia</option>
+          <option>Malaysia</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" placeholder="Minimum 8 characters" value="••••••••" />
+    </div>
+
+    <a href="member.html" class="submit-btn">Create Membership →</a>
+  </div>
+</section>
+
+</main>
+
+<script src="scripts.js"></script>
+</body>
+</html>
