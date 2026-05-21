@@ -125,22 +125,128 @@
     <div class="venue-head">
       <div>
         <div class="eyebrow" style="color: var(--gold); margin-bottom: 14px;">Festival Venue · Kuta Beach</div>
-        <h2>Find your way through the <em>festival.</em></h2>
+        <h2>Discovery Mall Maps · <em>Tenant directory.</em></h2>
       </div>
-      <div class="venue-head-desc">A full layout of the festival grounds — zones, stages, and merchant areas all in one view.</div>
+      <div class="venue-head-desc">Interactive layout of festival booths across seven zones. Click any pin on the map or tenant name in the directory to see details.</div>
     </div>
 
-    <div class="venue-image-wrap">
-      <div class="venue-image-viewport" id="venueViewport">
-        <img src="venue-map.jpg" alt="Discovery Kuta Festival Venue Map" class="venue-image-static" id="venueImage" />
+    <div class="venue-map-layout">
+      <div class="venue-map-canvas">
+        <svg class="venue-svg" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" aria-label="Festival venue map">
+          <defs>
+            <linearGradient id="oceanGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#c5dee5"/>
+              <stop offset="100%" stop-color="#a8c5d0"/>
+            </linearGradient>
+            <linearGradient id="beachGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f4ddb8"/>
+              <stop offset="100%" stop-color="#ead29c"/>
+            </linearGradient>
+            <pattern id="dotPattern" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="0.7" fill="#d9cfb8" opacity="0.45"/>
+            </pattern>
+          </defs>
+
+          <rect width="1200" height="800" fill="#f0e9d8"/>
+          <rect width="1200" height="800" fill="url(#dotPattern)"/>
+
+          <rect x="0" y="0" width="1200" height="140" fill="url(#oceanGrad)"/>
+          <path d="M 0,55 Q 100,50 200,55 T 400,55 T 600,55 T 800,55 T 1000,55 T 1200,55" fill="none" stroke="#ffffff" stroke-opacity="0.40" stroke-width="1.2"/>
+          <path d="M 0,85 Q 120,80 240,85 T 480,85 T 720,85 T 960,85 T 1200,85" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="1"/>
+          <path d="M 0,115 Q 100,110 200,115 T 400,115 T 600,115 T 800,115 T 1000,115 T 1200,115" fill="none" stroke="#ffffff" stroke-opacity="0.20" stroke-width="0.8"/>
+
+          <path d="M 0,140 C 200,135 400,150 600,145 C 800,140 1000,150 1200,140 L 1200,230 C 1000,225 800,235 600,228 C 400,221 200,232 0,230 Z" fill="url(#beachGrad)"/>
+
+          <path d="M 600,720 L 600,500" fill="none" stroke="#c9a961" stroke-width="2" stroke-dasharray="3 6" opacity="0.55"/>
+          <path d="M 600,500 L 250,500" fill="none" stroke="#c9a961" stroke-width="2" stroke-dasharray="3 6" opacity="0.55"/>
+          <path d="M 600,500 L 950,500" fill="none" stroke="#c9a961" stroke-width="2" stroke-dasharray="3 6" opacity="0.55"/>
+          <path d="M 600,450 L 600,350" fill="none" stroke="#c9a961" stroke-width="2" stroke-dasharray="3 6" opacity="0.55"/>
+          <path d="M 600,350 C 720,310 840,260 980,220" fill="none" stroke="#c9a961" stroke-width="2" stroke-dasharray="3 6" opacity="0.45"/>
+          <path d="M 600,350 C 480,380 360,400 250,400" fill="none" stroke="#c9a961" stroke-width="2" stroke-dasharray="3 6" opacity="0.45"/>
+
+          <g class="zone-group" data-zone="sunset">
+            <rect class="zone zone-sunset" x="870" y="160" width="270" height="90" rx="14"/>
+            <text class="zone-label" x="1005" y="192">SUNSET STAGE</text>
+            <text class="zone-sublabel" x="1005" y="212">Event · Live</text>
+          </g>
+          <g class="zone-group" data-zone="heritage">
+            <rect class="zone zone-heritage" x="440" y="270" width="320" height="160" rx="14"/>
+            <text class="zone-label" x="600" y="304">HERITAGE PLAZA</text>
+            <text class="zone-sublabel" x="600" y="324">Cultural · Exhibits</text>
+          </g>
+          <g class="zone-group" data-zone="food-court">
+            <rect class="zone zone-foodcourt" x="60" y="280" width="320" height="180" rx="14"/>
+            <text class="zone-label" x="220" y="314">FOOD COURT</text>
+            <text class="zone-sublabel" x="220" y="334">F&amp;B · Indonesian</text>
+          </g>
+          <g class="zone-group" data-zone="artisan">
+            <rect class="zone zone-artisan" x="820" y="320" width="320" height="200" rx="14"/>
+            <text class="zone-label" x="980" y="354">ARTISAN VILLAGE</text>
+            <text class="zone-sublabel" x="980" y="374">Handcraft · UMKM</text>
+          </g>
+          <g class="zone-group" data-zone="marketplace">
+            <rect class="zone zone-marketplace" x="420" y="450" width="340" height="180" rx="14"/>
+            <text class="zone-label" x="590" y="484">MARKETPLACE</text>
+            <text class="zone-sublabel" x="590" y="504">Retail · Specialty</text>
+          </g>
+          <g class="zone-group" data-zone="wellness">
+            <rect class="zone zone-wellness" x="60" y="490" width="320" height="200" rx="14"/>
+            <text class="zone-label" x="220" y="524">WELLNESS GARDEN</text>
+            <text class="zone-sublabel" x="220" y="544">Spa · Yoga · Herbs</text>
+          </g>
+
+          <text class="zone-label-beach" x="600" y="195">BEACH · KUTA</text>
+          <text class="zone-sublabel-beach" x="600" y="213">Recreation</text>
+
+          <g class="decor palm" transform="translate(415,260)"><path d="M 0,0 L 0,-30 M -8,-25 Q -12,-32 -16,-28 M 8,-25 Q 12,-32 16,-28 M 0,-30 Q -4,-38 -10,-34 M 0,-30 Q 4,-38 10,-34" fill="none" stroke="#1f6b53" stroke-width="1.4" stroke-linecap="round"/></g>
+          <g class="decor palm" transform="translate(800,260)"><path d="M 0,0 L 0,-30 M -8,-25 Q -12,-32 -16,-28 M 8,-25 Q 12,-32 16,-28 M 0,-30 Q -4,-38 -10,-34 M 0,-30 Q 4,-38 10,-34" fill="none" stroke="#1f6b53" stroke-width="1.4" stroke-linecap="round"/></g>
+          <g class="decor palm" transform="translate(405,690)"><path d="M 0,0 L 0,-30 M -8,-25 Q -12,-32 -16,-28 M 8,-25 Q 12,-32 16,-28 M 0,-30 Q -4,-38 -10,-34 M 0,-30 Q 4,-38 10,-34" fill="none" stroke="#1f6b53" stroke-width="1.4" stroke-linecap="round"/></g>
+          <g class="decor palm" transform="translate(800,690)"><path d="M 0,0 L 0,-30 M -8,-25 Q -12,-32 -16,-28 M 8,-25 Q 12,-32 16,-28 M 0,-30 Q -4,-38 -10,-34 M 0,-30 Q 4,-38 10,-34" fill="none" stroke="#1f6b53" stroke-width="1.4" stroke-linecap="round"/></g>
+
+          <g class="entrance" transform="translate(600,750)">
+            <rect x="-80" y="-22" width="160" height="44" rx="3" fill="#0b3a2e"/>
+            <text x="0" y="6" text-anchor="middle" fill="#e0c989" font-size="11" font-family="Outfit" letter-spacing="2.5" font-weight="500">MAIN ENTRANCE</text>
+          </g>
+
+          <g class="compass" transform="translate(70,740)">
+            <circle cx="0" cy="0" r="26" fill="rgba(248,244,236,0.85)" stroke="#6b6358" stroke-width="0.8"/>
+            <text x="0" y="-13" text-anchor="middle" font-size="9" fill="#0b3a2e" font-family="Outfit" letter-spacing="1.5" font-weight="600">N</text>
+            <text x="0" y="22" text-anchor="middle" font-size="9" fill="#6b6358" font-family="Outfit" letter-spacing="1.5">S</text>
+            <text x="-17" y="3" text-anchor="middle" font-size="9" fill="#6b6358" font-family="Outfit" letter-spacing="1.5">W</text>
+            <text x="17" y="3" text-anchor="middle" font-size="9" fill="#6b6358" font-family="Outfit" letter-spacing="1.5">E</text>
+            <path d="M 0,-15 L 4,0 L 0,15 L -4,0 Z" fill="#c9a961"/>
+          </g>
+
+          <g id="tenantPins"></g>
+        </svg>
+
+        <div class="tenant-tooltip" id="venueTooltip" role="tooltip" aria-hidden="true">
+          <div class="vt-head">
+            <div>
+              <div class="vt-zone" id="vtZone">Food Court</div>
+              <div class="vt-name" id="vtName">Tenant</div>
+            </div>
+            <button class="vt-close" id="vtClose" aria-label="Close">×</button>
+          </div>
+          <div class="vt-cat" id="vtCat">Category</div>
+          <div class="vt-desc" id="vtDesc">Description.</div>
+          <div class="vt-meta">
+            <div class="vt-meta-row"><span>Hours</span><strong id="vtHours">—</strong></div>
+            <div class="vt-meta-row"><span>Earn rate</span><strong id="vtMult">—</strong></div>
+          </div>
+        </div>
       </div>
-      <div class="venue-zoom-controls">
-        <button class="venue-zoom-btn" id="venueZoomIn" aria-label="Zoom in" title="Zoom in">+</button>
-        <button class="venue-zoom-btn" id="venueZoomOut" aria-label="Zoom out" title="Zoom out">−</button>
-        <button class="venue-zoom-btn reset" id="venueZoomReset" aria-label="Reset zoom" title="Reset">FIT</button>
-      </div>
-      <div class="venue-zoom-level" id="venueZoomLevel">100%</div>
-      <div class="venue-zoom-hint" id="venueZoomHint"><strong>Scroll</strong> to zoom · <strong>Drag</strong> to pan</div>
+
+      <aside class="venue-directory">
+        <div class="vd-head">
+          <div class="vd-head-title">Tenant Directory</div>
+          <div class="vd-head-sub" id="vdHeadSub">27 booths · 7 zones</div>
+        </div>
+        <div class="vd-search-wrap">
+          <input type="text" class="vd-search" placeholder="Search tenants..." id="vdSearch" />
+        </div>
+        <div class="vd-list" id="vdList"></div>
+      </aside>
     </div>
   </div>
 </section>

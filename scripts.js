@@ -222,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQrModal();
   initAdminNav();
   initVenueZoom();
+  initTenantMap();
 });
 
 // ===========================================
@@ -444,5 +445,228 @@ function initVenueZoom() {
     // Initialize UI state
     updateUI();
   });
+}
+
+// ===========================================
+// TENANT MAP — interactive SVG + directory
+// ===========================================
+const FESTIVAL_TENANTS = [
+  { id: 'warung-ibu-made',  name: 'Warung Ibu Made',       zone: 'food-court',  x: 140, y: 360, cat: 'Indonesian · Local',       desc: 'Traditional warung serving Balinese home-cooked specialties — bebek betutu, lawar, urab.', hours: '10:00 — 22:00', mult: '1× pts' },
+  { id: 'bali-coffee',      name: 'Bali Artisan Coffee',   zone: 'food-court',  x: 230, y: 320, cat: 'Coffee',                   desc: 'Single-origin Kintamani beans, brewed slow over manual pour-over.', hours: '07:00 — 22:00', mult: '1× pts' },
+  { id: 'sate-lilit',       name: 'Sate Lilit Bli Komang', zone: 'food-court',  x: 305, y: 410, cat: 'Indonesian · BBQ',         desc: 'Hand-minced Balinese sate over coconut husk fire.', hours: '11:00 — 23:00', mult: '1× pts' },
+  { id: 'pisang-madu',      name: 'Pisang Goreng Madu',    zone: 'food-court',  x: 170, y: 430, cat: 'Sweet · Snack',            desc: 'Crispy fried banana drizzled with wild Sumbawa honey.', hours: '10:00 — 22:00', mult: '1× pts' },
+  { id: 'bebek-bengil',     name: 'Bebek Bengil Ubud',     zone: 'food-court',  x: 250, y: 400, cat: 'Indonesian · Signature',   desc: "Famed crispy duck — Ubud's traveling kitchen.", hours: '12:00 — 22:00', mult: '1× pts' },
+
+  { id: 'sari-batik',       name: 'Sari Bali Batik',       zone: 'artisan',     x: 900, y: 400, cat: 'Textile · Handmade',       desc: 'Hand-drawn batik tulis from Tabanan villages.', hours: '10:00 — 21:00', mult: '1.5× pts' },
+  { id: 'ubud-wood',        name: 'Ubud Wood Crafts',      zone: 'artisan',     x: 1010,y: 365, cat: 'Wood · Sculpture',         desc: 'Master carvers from Mas village — teak, suar, mahogany.', hours: '10:00 — 21:00', mult: '1.5× pts' },
+  { id: 'celuk-silver',     name: 'Silver of Celuk',       zone: 'artisan',     x: 1080,y: 440, cat: 'Jewelry',                  desc: 'Traditional Balinese silver-smithing since 1947.', hours: '10:00 — 21:00', mult: '1.5× pts' },
+  { id: 'leather-atelier',  name: 'Leather Atelier',       zone: 'artisan',     x: 870, y: 470, cat: 'Leather goods',            desc: 'Hand-stitched bags and small leather goods, made on-site.', hours: '11:00 — 21:00', mult: '1.5× pts' },
+  { id: 'bamboo-studio',    name: 'Bamboo Studio',         zone: 'artisan',     x: 990, y: 490, cat: 'Sustainable design',       desc: 'Bamboo homeware and lighting from Sidemen artisans.', hours: '10:00 — 21:00', mult: '1.5× pts' },
+
+  { id: 'heritage-gallery', name: 'Bali Heritage Gallery', zone: 'heritage',    x: 510, y: 360, cat: 'Cultural · Exhibition',    desc: 'Curated exhibition of Balinese textile and ceremonial heritage.', hours: '09:00 — 20:00', mult: '2× pts' },
+  { id: 'cultural-workshop',name: 'Cultural Workshop',     zone: 'heritage',    x: 660, y: 380, cat: 'Workshop · Daily',         desc: 'Daily demos: legong dance, gamelan, batik painting.', hours: '11:00 — 18:00', mult: '2× pts' },
+  { id: 'pura-mini',        name: 'Pura Mini · Heritage',  zone: 'heritage',    x: 595, y: 410, cat: 'Cultural',                 desc: 'Replica temple — daily blessing ceremony at 17:00.', hours: '08:00 — 19:00', mult: '2× pts' },
+
+  { id: 'sunset-stage',     name: 'Sunset Music Session',  zone: 'sunset',      x: 970, y: 215, cat: 'Event · Live',             desc: 'Daily live performances at 17:00 — earn 50 pts on check-in.', hours: '15:00 — 23:00', mult: 'Event' },
+  { id: 'sunset-bar',       name: 'Sunset Bar',            zone: 'sunset',      x: 1070,y: 230, cat: 'Bar',                      desc: 'Tropical cocktails with the best Kuta sunset view.', hours: '15:00 — 24:00', mult: '1× pts' },
+
+  { id: 'spa-bali',         name: 'Spa Bali',              zone: 'wellness',    x: 140, y: 580, cat: 'Wellness · Spa',           desc: 'Traditional Balinese massage — 60 / 90 min sessions.', hours: '10:00 — 21:00', mult: '1× pts' },
+  { id: 'yoga-pavilion',    name: 'Yoga Pavilion',         zone: 'wellness',    x: 260, y: 560, cat: 'Wellness · Class',         desc: 'Drop-in classes every two hours from 07:00.', hours: '07:00 — 19:00', mult: '1.5× pts' },
+  { id: 'herbal-tea',       name: 'Herbal Tea House',      zone: 'wellness',    x: 200, y: 640, cat: 'F&B · Herbal',             desc: 'Jamu and herbal infusions to traditional recipes.', hours: '08:00 — 20:00', mult: '1× pts' },
+  { id: 'meditation-deck',  name: 'Meditation Deck',       zone: 'wellness',    x: 320, y: 620, cat: 'Wellness',                 desc: 'Silent deck — guided sessions 06:30 / 17:30.', hours: '06:00 — 19:00', mult: '1.5× pts' },
+
+  { id: 'discovery-popup',  name: 'Discovery Pop-up Store',zone: 'marketplace', x: 520, y: 530, cat: 'Retail · Festival',        desc: 'Exclusive Discovery Mall festival-edition merchandise.', hours: '10:00 — 22:00', mult: '1× pts' },
+  { id: 'festival-merch',   name: 'Festival Merch',        zone: 'marketplace', x: 615, y: 510, cat: 'Apparel',                  desc: 'Festival tees, totes, caps — official merchandise.', hours: '10:00 — 22:00', mult: '1× pts' },
+  { id: 'local-honey',      name: 'Local Honey & Spice',   zone: 'marketplace', x: 700, y: 560, cat: 'Food · Specialty',         desc: 'Wild honey, sambal kits, vanilla pods from across the archipelago.', hours: '10:00 — 21:00', mult: '1× pts' },
+  { id: 'coconut-bar',      name: 'Coconut Bar',           zone: 'marketplace', x: 465, y: 585, cat: 'F&B · Tropical',           desc: 'Fresh coconuts, smoothie bowls, açai.', hours: '09:00 — 22:00', mult: '1× pts' },
+  { id: 'surf-shop',        name: 'Surf Shop',             zone: 'marketplace', x: 720, y: 595, cat: 'Retail · Surf',            desc: 'Boards, gear, and beach essentials.', hours: '08:00 — 20:00', mult: '1× pts' },
+
+  { id: 'beach-activities', name: 'Beach Activities',      zone: 'beach',       x: 240, y: 195, cat: 'Recreation',               desc: 'Volleyball nets, hammocks, beach games.', hours: '08:00 — 19:00', mult: '1× pts' },
+  { id: 'surfboard-rental', name: 'Surfboard Rental',      zone: 'beach',       x: 450, y: 215, cat: 'Recreation',               desc: 'Beginner to pro boards, with optional lesson.', hours: '07:00 — 18:00', mult: '1× pts' },
+  { id: 'photo-booth',      name: 'Festival Photo Booth',  zone: 'beach',       x: 700, y: 210, cat: 'Recreation',               desc: 'Instant prints — earn 20 pts per visit.', hours: '10:00 — 22:00', mult: '1.5× pts' },
+];
+
+const FESTIVAL_ZONES = [
+  { id: 'food-court',  name: 'Food Court' },
+  { id: 'artisan',     name: 'Artisan Village' },
+  { id: 'heritage',    name: 'Heritage Plaza' },
+  { id: 'sunset',      name: 'Sunset Stage' },
+  { id: 'wellness',    name: 'Wellness Garden' },
+  { id: 'marketplace', name: 'Marketplace' },
+  { id: 'beach',       name: 'Beach · Kuta' },
+];
+
+function initTenantMap() {
+  const svgs = document.querySelectorAll('.venue-svg');
+  if (!svgs.length) return;
+
+  svgs.forEach(svg => setupOneTenantMap(svg));
+}
+
+function setupOneTenantMap(svg) {
+  const canvas = svg.closest('.venue-map-canvas');
+  const layout = svg.closest('.venue-map-layout');
+  if (!canvas || !layout) return;
+
+  const pinsGroup = svg.querySelector('#tenantPins');
+  const tooltip = canvas.querySelector(".tenant-tooltip");
+  const directory = layout.querySelector('.vd-list');
+  const searchInput = layout.querySelector('.vd-search');
+  const headSub = layout.querySelector('#vdHeadSub');
+
+  if (!pinsGroup || !tooltip || !directory) return;
+
+  // Render pins
+  const NS = 'http://www.w3.org/2000/svg';
+  FESTIVAL_TENANTS.forEach(t => {
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'tenant-pin');
+    g.setAttribute('data-tenant', t.id);
+    g.setAttribute('transform', `translate(${t.x}, ${t.y})`);
+
+    const outer = document.createElementNS(NS, 'circle');
+    outer.setAttribute('class', 'pin-outer');
+    outer.setAttribute('r', '11');
+    g.appendChild(outer);
+
+    const dot = document.createElementNS(NS, 'circle');
+    dot.setAttribute('class', 'pin-dot');
+    dot.setAttribute('r', '5');
+    g.appendChild(dot);
+
+    pinsGroup.appendChild(g);
+  });
+
+  // Render directory grouped by zone
+  function renderDirectory(filter = '') {
+    const q = filter.trim().toLowerCase();
+    directory.innerHTML = '';
+    let totalShown = 0;
+
+    FESTIVAL_ZONES.forEach(zone => {
+      const items = FESTIVAL_TENANTS
+        .filter(t => t.zone === zone.id)
+        .filter(t => !q || t.name.toLowerCase().includes(q) || t.cat.toLowerCase().includes(q));
+      if (!items.length) return;
+
+      const zoneDiv = document.createElement('div');
+      zoneDiv.className = 'vd-zone';
+      zoneDiv.dataset.zone = zone.id;
+
+      const head = document.createElement('div');
+      head.className = 'vd-zone-head';
+      head.innerHTML = `<div class="vd-zone-name">${zone.name}</div><div class="vd-zone-count">${items.length} ${items.length === 1 ? 'booth' : 'booths'}</div>`;
+      zoneDiv.appendChild(head);
+
+      items.forEach(t => {
+        const btn = document.createElement('button');
+        btn.className = 'vd-tenant';
+        btn.dataset.tenant = t.id;
+        btn.innerHTML = `${t.name}<div class="vd-tenant-meta">${t.cat}</div>`;
+        btn.addEventListener('click', () => focusTenant(t.id));
+        zoneDiv.appendChild(btn);
+        totalShown++;
+      });
+
+      directory.appendChild(zoneDiv);
+    });
+
+    if (totalShown === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'vd-empty';
+      empty.textContent = 'No tenants match your search.';
+      directory.appendChild(empty);
+    }
+
+    if (headSub) {
+      headSub.textContent = q
+        ? `${totalShown} of ${FESTIVAL_TENANTS.length} match`
+        : `${FESTIVAL_TENANTS.length} booths · ${FESTIVAL_ZONES.length} zones`;
+    }
+  }
+
+  function focusTenant(id) {
+    const tenant = FESTIVAL_TENANTS.find(t => t.id === id);
+    if (!tenant) return;
+    const zone = FESTIVAL_ZONES.find(z => z.id === tenant.zone);
+
+    // mark active
+    layout.querySelectorAll('.tenant-pin.active').forEach(el => el.classList.remove('active'));
+    layout.querySelectorAll('.vd-tenant.active').forEach(el => el.classList.remove('active'));
+    const pin = layout.querySelector(`.tenant-pin[data-tenant="${id}"]`);
+    const btn = layout.querySelector(`.vd-tenant[data-tenant="${id}"]`);
+    if (pin) pin.classList.add('active');
+    if (btn) {
+      btn.classList.add('active');
+      btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    // populate tooltip
+    tooltip.querySelector('#vtZone').textContent = zone ? zone.name : '';
+    tooltip.querySelector('#vtName').textContent = tenant.name;
+    tooltip.querySelector('#vtCat').textContent = tenant.cat;
+    tooltip.querySelector('#vtDesc').textContent = tenant.desc;
+    tooltip.querySelector('#vtHours').textContent = tenant.hours;
+    tooltip.querySelector('#vtMult').textContent = tenant.mult;
+
+    // position tooltip relative to canvas
+    const canvasRect = canvas.getBoundingClientRect();
+    const xPct = tenant.x / 1200;
+    const yPct = tenant.y / 800;
+    const tipW = tooltip.offsetWidth || 260;
+    const tipH = tooltip.offsetHeight || 220;
+
+    let left = xPct * canvasRect.width + 18;
+    let top  = yPct * canvasRect.height - tipH / 2;
+
+    // clamp horizontal: flip to left if would overflow right
+    if (left + tipW > canvasRect.width - 12) {
+      left = xPct * canvasRect.width - tipW - 18;
+    }
+    if (left < 12) left = 12;
+
+    // clamp vertical
+    if (top < 12) top = 12;
+    if (top + tipH > canvasRect.height - 12) top = canvasRect.height - tipH - 12;
+
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top  = `${top}px`;
+    tooltip.classList.add('show');
+    tooltip.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideTooltip() {
+    tooltip.classList.remove('show');
+    tooltip.setAttribute('aria-hidden', 'true');
+    layout.querySelectorAll('.tenant-pin.active').forEach(el => el.classList.remove('active'));
+    layout.querySelectorAll('.vd-tenant.active').forEach(el => el.classList.remove('active'));
+  }
+
+  // attach pin click handlers
+  pinsGroup.addEventListener('click', e => {
+    const pin = e.target.closest('.tenant-pin');
+    if (!pin) return;
+    focusTenant(pin.dataset.tenant);
+  });
+
+  // close button
+  const closeBtn = tooltip.querySelector('#vtClose');
+  if (closeBtn) closeBtn.addEventListener('click', hideTooltip);
+
+  // dismiss on outside click
+  document.addEventListener('click', e => {
+    if (!tooltip.classList.contains('show')) return;
+    if (tooltip.contains(e.target)) return;
+    if (e.target.closest('.tenant-pin')) return;
+    if (e.target.closest('.vd-tenant')) return;
+    hideTooltip();
+  });
+
+  // search
+  if (searchInput) {
+    searchInput.addEventListener('input', e => renderDirectory(e.target.value));
+  }
+
+  renderDirectory();
 }
 
