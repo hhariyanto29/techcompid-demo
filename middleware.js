@@ -1,17 +1,17 @@
 // Edge Middleware — gates the demo with an expiry.
 //
-// Set DEMO_EXPIRES_AT in Vercel (Settings → Environment Variables) as an ISO
-// timestamp, e.g. "2026-05-22T12:00:00+08:00". If unset, falls back to the
-// hardcoded value below. Must redeploy after changing the env var.
+// Expiry is controlled by DEMO_EXPIRES_AT (set in Vercel → Settings →
+// Environment Variables) as an ISO timestamp, e.g.
+// "2026-05-28T20:00:00+08:00". If unset, the demo has no expiry and
+// stays open. Redeploy after changing the env var.
 
 export const config = {
   matcher: '/((?!.*\\.(?:css|js|mjs|jpg|jpeg|png|svg|ico|webp|gif|woff|woff2|ttf|map|txt|json)).*)',
 };
 
-const DEFAULT_EXPIRES_AT = '2026-05-21T10:43:15Z'; // 18:43 WITA · ~6h after this commit
-
 export default function middleware() {
-  const expiresAt = process.env.DEMO_EXPIRES_AT || DEFAULT_EXPIRES_AT;
+  const expiresAt = process.env.DEMO_EXPIRES_AT;
+  if (!expiresAt) return;
   const expiresMs = Date.parse(expiresAt);
   if (!Number.isFinite(expiresMs)) return;
   if (Date.now() <= expiresMs) return;
